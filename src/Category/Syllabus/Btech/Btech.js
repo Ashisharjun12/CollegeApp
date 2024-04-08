@@ -6,11 +6,12 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {useNavigation} from '@react-navigation/native';
-import pyq from '../../../Json/Pyq.json';
+import BtechJson from '../../../Json/BtechJson.json';
 import GoBack from '../../../Common/GoBack';
 
-const PyqData = () => {
+const Btech = () => {
   const navigation = useNavigation();
+  
 
   return (
     <View>
@@ -27,11 +28,12 @@ const PyqData = () => {
           </Text>
         </View>
       <View>
-        {pyq[0].Branch.map(branch => {
-          return (
+
+      {BtechJson[0].Branch.map((branch)=>{
+        return( 
             <TouchableOpacity
               key={branch.id}
-              onPress={() => navigation.navigate('PyqData_Sem')}
+              onPress={() => navigation.navigate('BtechSem')}
               style={{
                 marginBottom:responsiveHeight(2.5),
                 width: responsiveWidth(93),
@@ -63,14 +65,16 @@ const PyqData = () => {
                   color: 'black',
                   fontWeight: 'bold',
                 }}>
-                {branch.Branch_Name}
+                {branch.Branch}
               </Text>
             </TouchableOpacity>
-          );
+          )
         })}
+         
+     
       </View>
     </View>
   );
 };
 
-export default PyqData;
+export default Btech;

@@ -57,7 +57,7 @@ const Portal = () => {
         <Card
           name={'Internship'}
           navigation={navigation}
-          screen={'PyqData'}
+          screen={'Intern'}
           image={require('../Image/pyq.png')}
           cardStyle={{marginBottom: responsiveHeight(3),gap:responsiveWidth(24)}}
           bgColor="#F7A76C"
@@ -67,7 +67,7 @@ const Portal = () => {
         <Card
           name={'Nptel'}
           navigation={navigation}
-          screen={'Holiday'}
+          screen={'Nptel'}
           image={require('../Image/holiday.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
@@ -80,7 +80,7 @@ const Portal = () => {
         <Card
           name={'PMS Online'}
           navigation={navigation}
-          screen={'BeuResult'}
+          screen={'Pms'}
           image={require('../Image/result.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
@@ -92,7 +92,7 @@ const Portal = () => {
         <Card
           name={'Schlorship'}
           navigation={navigation}
-          screen={'BeuResult'}
+          screen={'Schlorship'}
           image={require('../Image/result.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
@@ -104,7 +104,7 @@ const Portal = () => {
         <Card
           name={'Spoken Tutorial'}
           navigation={navigation}
-          screen={'BeuResult'}
+          screen={'Spoken'}
           image={require('../Image/result.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
@@ -112,6 +112,18 @@ const Portal = () => {
           }}
           bgColor="#EC7272"
           shadowClr="red"
+        />
+        <Card
+          name={'National Digital Library'}
+          navigation={navigation}
+          screen={'NatLibrary'}
+          image={require('../Image/result.png')}
+          cardStyle={{
+            marginBottom: responsiveHeight(3),
+            gap: responsiveWidth(2),
+          }}
+          bgColor="#29ADB2"
+          shadowClr="green"
         />
       </View>
     </ScrollView>

@@ -6,11 +6,12 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {useNavigation} from '@react-navigation/native';
-import pyq from '../../../Json/Pyq.json';
+import BtechJson from '../../../Json/BtechJson.json';
 import GoBack from '../../../Common/GoBack';
 
-const PyqData = () => {
+const BtechSub = () => {
   const navigation = useNavigation();
+  
 
   return (
     <View>
@@ -23,26 +24,27 @@ const PyqData = () => {
               fontWeight: 'bold',
               alignSelf: 'center',
             }}>
-            Choose Your Branch
+            Choose Your Subject
           </Text>
         </View>
       <View>
-        {pyq[0].Branch.map(branch => {
-          return (
+
+      {BtechJson[0].Branch[0].Semester[0].subjects.map((subName)=>{
+        return( 
             <TouchableOpacity
-              key={branch.id}
-              onPress={() => navigation.navigate('PyqData_Sem')}
+              key={subName.id}
+              onPress={() => navigation.navigate('BtechModule')}
               style={{
                 marginBottom:responsiveHeight(2.5),
                 width: responsiveWidth(93),
                 height: responsiveHeight(13),
-                backgroundColor: '#FFAF45',
+                backgroundColor: '#15F5BA',
                 alignSelf: 'center',
                 borderRadius: 17,
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: responsiveWidth(5),
+                gap: responsiveWidth(12),
                 shadowColor: 'orange',
                 shadowOpacity: 0.25,
                 shadowRadius: 29,
@@ -54,7 +56,7 @@ const PyqData = () => {
                   width: responsiveWidth(21),
                   height: responsiveHeight(8.5),
                 }}
-                source={{uri : branch.Branch_Img}}
+                source={{uri: subName.Subject_Img}}
               />
 
               <Text
@@ -63,14 +65,16 @@ const PyqData = () => {
                   color: 'black',
                   fontWeight: 'bold',
                 }}>
-                {branch.Branch_Name}
+                {subName.Subject_Name}
               </Text>
             </TouchableOpacity>
-          );
+          )
         })}
+         
+     
       </View>
     </View>
   );
 };
 
-export default PyqData;
+export default BtechSub;

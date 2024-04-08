@@ -1,0 +1,192 @@
+[
+    {
+        "id": 1,
+        "college_name": "Bhagalpur College of Engineering, Bhagalpur",
+        "website": "https://www.bcebhagalpur.ac.in/"
+    },
+    {
+        "id": 2,
+        "college_name": "Gaya College of Engineering, Gaya",
+        "website": "https://www.gcegaya.ac.in/"
+    },
+    {
+        "id": 3,
+        "college_name": "Darbhanga College of Engineering, Darbhanga",
+        "website": "https://www.dce-darbhanga.org/"
+    },
+    {
+        "id": 4,
+        "college_name": "Motihari College of Engineering, Motihari",
+        "website": "https://www.mcemotihari.ac.in/"
+    },
+    {
+        "id": 5,
+        "college_name": "Lok Nayak Jai Prakash Institute of Technology, Chapra",
+        "website": "https://www.lnjpitchapra.in/"
+    },
+    {
+        "id": 6,
+        "college_name": "Sersah Engineering College, Sasaram, Rohtas",
+        "website": "https://www.scesasaram.in/"
+    },
+    {
+        "id": 7,
+        "college_name": "Rashtrakavi Ramdhari Singh Dinkar College of Engineering, Begusarai",
+        "website": "https://www.rrsdcebgs.ac.in/"
+    },
+    {
+        "id": 8,
+        "college_name": "Supaul College of Engineering, Supaul",
+        "website": "https://www.scesupaul.org/"
+    },
+    {
+        "id": 9,
+        "college_name": "Bakhtiyarpur College of Engineering, Patna",
+        "website": "https://bcebakhtiyarpur.org/"
+    },
+    {
+        "id": 10,
+        "college_name": "Sitamarhi Institute of Technology, Sitamarhi",
+        "website": "https://www.sitsitamarhi.ac.in/"
+    },
+    {
+        "id": 11,
+        "college_name": "Purnea College of Engineering, Purnea",
+        "website": "https://www.pcepurnia.org/"
+    },
+    {
+        "id": 12,
+        "college_name": "B. P. Mandal College of Engineering, Madhepura",
+        "website": "https://www.bpmcemadhepura.org/"
+    },
+    {
+        "id": 13,
+        "college_name": "Katihar Engineering College, Katihar",
+        "website": "http://keck.ac.in/"
+    },
+    {
+        "id": 14,
+        "college_name": "Saharsa College of Engineering, Saharsa",
+        "website": "https://www.scesaharsa.org/"
+    },
+    {
+        "id": 15,
+        "college_name": "Government Engineering College, Jamui",
+        "website": "https://www.gecjamui.org/"
+    },
+    {
+        "id": 16,
+        "college_name": "Government Engineering College, Banka",
+        "website": "https://www.gecbanka.org/"
+    },
+    {
+        "id": 17,
+        "college_name": "Government Engineering College, Vaishali",
+        "website": "https://www.gecvaishali.org/"
+    },
+    {
+        "id": 18,
+        "college_name": "Government Engineering College, Nawada",
+        "website": "https://www.gecnawada.org.in/"
+    },
+    {
+        "id": 19,
+        "college_name": "Government Engineering College, Kishanganj",
+        "website": "https://www.geckishanganj.org/"
+    },
+    {
+        "id": 20,
+        "college_name": "Government Engineering College, Munger",
+        "website": "http://gecmunger.in/"
+    },
+    {
+        "id": 21,
+        "college_name": "Government Engineering College, Sheohar",
+        "website": "https://www.gecsheohar.ac.in/"
+    },
+    {
+        "id": 22,
+        "college_name": "Government Engineering College, West Champaran",
+        "website": "https://www.gecwc.ac.in/"
+    },
+    {
+        "id": 23,
+        "college_name": "Government Engineering College, Aurangabad",
+        "website": "https://www.gecaurangabad.ac.in/"
+    },
+    {
+        "id": 24,
+        "college_name": "Government Engineering College, Kaimur",
+        "website": "https://www.geckaimur.ac.in/"
+    },
+    {
+        "id": 25,
+        "college_name": "Government Engineering College, Gopalganj",
+        "website": "https://www.gecgopalganj.org/"
+    },
+    {
+        "id": 26,
+        "college_name": "Government Engineering College, Madhubani",
+        "website": "https://www.gecmadhubani.ac.in/"
+    },
+    {
+        "id": 27,
+        "college_name": "Government Engineering College, Siwan",
+        "website": "https://www.gecsiwan.org/"
+    },
+    {
+        "id": 28,
+        "college_name": "Government Engineering College, Jehanabad",
+        "website": "https://www.gecjehanabad.ac.in/"
+    },
+    {
+        "id": 29,
+        "college_name": "Government Engineering College, Arwal",
+        "website": "https://www.gecarwal.ac.in/"
+    },
+    {
+        "id": 30,
+        "college_name": "Government Engineering College, Khagaria",
+        "website": "https://www.geckhagaria.org.in/"
+    },
+    {
+        "id": 31,
+        "college_name": "Government Engineering College, Buxar",
+        "website": "https://www.gecbuxar.org/"
+    },
+    {
+        "id": 32,
+        "college_name": "Government Engineering College, Bhojpur",
+        "website": "https://www.gecbhojpur.org/"
+    },
+    {
+        "id": 33,
+        "college_name": "Government Engineering College, Sheikhpura",
+        "website": "https://www.gecsheikhpura.org.in/"
+    },
+    {
+        "id": 34,
+        "college_name": "Government Engineering College, Lakhisarai",
+        "website": "http://geclakhisarai.in/"
+    },
+    {
+        "id": 35,
+        "college_name": "Government Engineering College, Samastipur",
+        "website": "https://www.gecsamastipur.org.in/"
+    },
+    {
+        "id": 36,
+        "college_name": "Muzaffarpur Institute of Technology, Muzaffarpur",
+        "website": "https://www.mitmuzaffarpur.org/"
+    },
+    {
+        "id": 37,
+        "college_name": "Shri Phanishwar Nath Renu Engineering College, Araria",
+        "website": "https://spnrecararia.ac.in/"
+    },
+    {
+        "id": 38,
+        "college_name": "Nalanda College of Engineering, Chandi",
+        "website": "https://ncechandi.ac.in/"
+    }
+]

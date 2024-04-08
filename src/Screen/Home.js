@@ -108,7 +108,7 @@ const Home = () => {
               flex: 1,
               marginLeft: responsiveWidth(4),
               fontSize: responsiveFontSize(2.3),
-              color: 'black',
+              color: 'black'
             }}
             placeholder="Search AnyThing"
           />
@@ -207,24 +207,7 @@ const Home = () => {
               navigation={navigation}
             />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              gap: responsiveWidth(3),
-              marginTop: responsiveHeight(2),
-            }}>
-            <CommonCategory
-              name={'Library'}
-              bgcolor="#6895D2"
-              image={require('../Image/library.png')}
-              imageStyle={{
-                width: responsiveWidth(40),
-                marginLeft: responsiveWidth(5),
-              }}
-              screen="Library"
-              navigation={navigation}
-            />
-          </View>
+        
         </View>
       </View>
     </ScrollView>

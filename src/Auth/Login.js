@@ -163,6 +163,10 @@ const Login = () => {
                   Sign Up
                 </Text>
               </TouchableOpacity>
+
+             
+
+              
             </View>
           </View>
         </View>

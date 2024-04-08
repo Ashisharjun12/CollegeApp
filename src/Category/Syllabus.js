@@ -58,7 +58,7 @@ const Syllabus = () => {
         <Card
           name={'Bachleor Of Technology'}
           navigation={navigation}
-          screen={'PyqData'}
+          screen={'Btech'}
           image={require('../Image/pyq.png')}
           cardStyle={{marginBottom: responsiveHeight(3)}}
           shadowClr="red"

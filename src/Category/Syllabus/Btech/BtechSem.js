@@ -6,11 +6,12 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {useNavigation} from '@react-navigation/native';
-import pyq from '../../../Json/Pyq.json';
+import BtechJson from '../../../Json/BtechJson.json';
 import GoBack from '../../../Common/GoBack';
 
-const PyqData = () => {
+const BtechSem = () => {
   const navigation = useNavigation();
+  
 
   return (
     <View>
@@ -23,20 +24,21 @@ const PyqData = () => {
               fontWeight: 'bold',
               alignSelf: 'center',
             }}>
-            Choose Your Branch
+            Choose Your Semester
           </Text>
         </View>
       <View>
-        {pyq[0].Branch.map(branch => {
-          return (
+
+      {BtechJson[0].Branch[0].Semester.map((semester)=>{
+        return( 
             <TouchableOpacity
-              key={branch.id}
-              onPress={() => navigation.navigate('PyqData_Sem')}
+              key={semester.id}
+              onPress={() => navigation.navigate('BtechSub')}
               style={{
                 marginBottom:responsiveHeight(2.5),
                 width: responsiveWidth(93),
                 height: responsiveHeight(13),
-                backgroundColor: '#FFAF45',
+                backgroundColor: '#ABD4C1',
                 alignSelf: 'center',
                 borderRadius: 17,
                 flexDirection: 'row',
@@ -54,7 +56,7 @@ const PyqData = () => {
                   width: responsiveWidth(21),
                   height: responsiveHeight(8.5),
                 }}
-                source={{uri : branch.Branch_Img}}
+                source={require('../../../Image/semester.png')}
               />
 
               <Text
@@ -63,14 +65,16 @@ const PyqData = () => {
                   color: 'black',
                   fontWeight: 'bold',
                 }}>
-                {branch.Branch_Name}
+                {semester.sem}
               </Text>
             </TouchableOpacity>
-          );
+          )
         })}
+         
+     
       </View>
     </View>
   );
 };
 
-export default PyqData;
+export default BtechSem;

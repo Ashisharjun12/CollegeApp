@@ -9,12 +9,13 @@ import {useNavigation} from '@react-navigation/native';
 import pyq from '../../../Json/Pyq.json';
 import GoBack from '../../../Common/GoBack';
 
-const PyqData = () => {
+const PyqData_sub = () => {
   const navigation = useNavigation();
 
   return (
     <View>
-      <GoBack style={{marginLeft:responsiveWidth(7)}}/>
+        <GoBack/>
+
       <View style={{marginBottom: responsiveHeight(3)}}>
           <Text
             style={{
@@ -23,27 +24,27 @@ const PyqData = () => {
               fontWeight: 'bold',
               alignSelf: 'center',
             }}>
-            Choose Your Branch
+            Choose Your Subject
           </Text>
         </View>
       <View>
-        {pyq[0].Branch.map(branch => {
+        {pyq[0].Branch[0].Semester[0].Subject.map(sub => {
           return (
-            <TouchableOpacity
-              key={branch.id}
-              onPress={() => navigation.navigate('PyqData_Sem')}
+            <TouchableOpacity  onPress={()=>navigation.navigate('PyqData_year')}
+              key={sub.id}
+              
               style={{
                 marginBottom:responsiveHeight(2.5),
                 width: responsiveWidth(93),
                 height: responsiveHeight(13),
-                backgroundColor: '#FFAF45',
+                backgroundColor: '#74E291',
                 alignSelf: 'center',
                 borderRadius: 17,
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: responsiveWidth(5),
-                shadowColor: 'orange',
+                gap: responsiveWidth(15),
+                shadowColor: '#green',
                 shadowOpacity: 0.25,
                 shadowRadius: 29,
                 elevation: 5,
@@ -54,7 +55,7 @@ const PyqData = () => {
                   width: responsiveWidth(21),
                   height: responsiveHeight(8.5),
                 }}
-                source={{uri : branch.Branch_Img}}
+                source={{uri: sub.Sub_Img}}
               />
 
               <Text
@@ -63,7 +64,7 @@ const PyqData = () => {
                   color: 'black',
                   fontWeight: 'bold',
                 }}>
-                {branch.Branch_Name}
+                {sub.Sub_Name}
               </Text>
             </TouchableOpacity>
           );
@@ -73,4 +74,4 @@ const PyqData = () => {
   );
 };
 
-export default PyqData;
+export default PyqData_sub;

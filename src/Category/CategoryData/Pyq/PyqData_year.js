@@ -9,12 +9,15 @@ import {useNavigation} from '@react-navigation/native';
 import pyq from '../../../Json/Pyq.json';
 import GoBack from '../../../Common/GoBack';
 
-const PyqData = () => {
+const PyqData_year = () => {
   const navigation = useNavigation();
+ 
 
   return (
     <View>
-      <GoBack style={{marginLeft:responsiveWidth(7)}}/>
+
+        <GoBack/>
+
       <View style={{marginBottom: responsiveHeight(3)}}>
           <Text
             style={{
@@ -23,27 +26,27 @@ const PyqData = () => {
               fontWeight: 'bold',
               alignSelf: 'center',
             }}>
-            Choose Your Branch
+            Choose Pyq Year
           </Text>
         </View>
       <View>
-        {pyq[0].Branch.map(branch => {
+        {pyq[0].Branch[0].Semester[0].Subject[0].Year.map(yr => {
           return (
-            <TouchableOpacity
-              key={branch.id}
-              onPress={() => navigation.navigate('PyqData_Sem')}
+            <TouchableOpacity  onPress={()=>navigation.navigate('ViewPyq', {url:yr.Pyq})}
+              key={yr.id}
+              
               style={{
                 marginBottom:responsiveHeight(2.5),
                 width: responsiveWidth(93),
                 height: responsiveHeight(13),
-                backgroundColor: '#FFAF45',
+                backgroundColor: '#B3C8CF',
                 alignSelf: 'center',
                 borderRadius: 17,
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',
-                gap: responsiveWidth(5),
-                shadowColor: 'orange',
+                gap: responsiveWidth(20),
+                shadowColor: 'black',
                 shadowOpacity: 0.25,
                 shadowRadius: 29,
                 elevation: 5,
@@ -51,19 +54,19 @@ const PyqData = () => {
               <Image
                 style={{
                   resizeMode: 'contain',
-                  width: responsiveWidth(21),
-                  height: responsiveHeight(8.5),
+                  width: responsiveWidth(19),
+                  height: responsiveHeight(8.2),
                 }}
-                source={{uri : branch.Branch_Img}}
+                source={require('../../../Image/year.png')}
               />
 
               <Text
                 style={{
-                  fontSize: responsiveFontSize(2.5),
+                  fontSize: responsiveFontSize(3.2),
                   color: 'black',
                   fontWeight: 'bold',
                 }}>
-                {branch.Branch_Name}
+                {yr.Yr}
               </Text>
             </TouchableOpacity>
           );
@@ -73,4 +76,4 @@ const PyqData = () => {
   );
 };
 
-export default PyqData;
+export default PyqData_year;

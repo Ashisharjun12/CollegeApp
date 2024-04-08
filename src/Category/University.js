@@ -32,11 +32,11 @@ const University = () => {
               color: 'black',
               fontWeight: 'bold',
             }}>
-            Portals
+            University
           </Text>
         </View>
 
-        <ImageCard image={require('../Image/semBanner.png')}  bgColor={'#F7A76C'}/>
+        <ImageCard image={require('../Image/semBanner.png')}  bgColor={'#008DDA'}/>
 
         {/* University Category */}
 
@@ -48,49 +48,36 @@ const University = () => {
               fontWeight: 'bold',
              marginLeft:responsiveWidth(5)
             }}>
-            Portals Category
+            University Category
           </Text>
         </View>
 
         {/* Universsity category card */}
 
         <Card
-          name={'Internship'}
+          name={'Beu Colleges'}
           navigation={navigation}
-          screen={'PyqData'}
+          screen={'UniversityData'}
           image={require('../Image/pyq.png')}
-          cardStyle={{marginBottom: responsiveHeight(3),gap:responsiveWidth(24)}}
-          bgColor="#F7A76C"
-          shadowClr="orange"
+          cardStyle={{marginBottom: responsiveHeight(3),gap:responsiveWidth(10)}}
+          bgColor="#40A2E3"
+          shadowClr="blue"
         />
 
         <Card
-          name={'Nptel'}
+          name={'Form FillUp'}
           navigation={navigation}
           screen={'Holiday'}
           image={require('../Image/holiday.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
-            gap: responsiveWidth(28),
+            gap: responsiveWidth(10),
           }}
           bgColor="#F7C566"
           shadowClr="#FE7A36"
         />
-
         <Card
-          name={'PMS Online'}
-          navigation={navigation}
-          screen={'BeuResult'}
-          image={require('../Image/result.png')}
-          cardStyle={{
-            marginBottom: responsiveHeight(3),
-            gap: responsiveWidth(11),
-          }}
-          bgColor="#86B6F6"
-          shadowClr="#3559E0"
-        />
-        <Card
-          name={'Schlorship'}
+          name={'Beu Notice'}
           navigation={navigation}
           screen={'BeuResult'}
           image={require('../Image/result.png')}
@@ -102,7 +89,7 @@ const University = () => {
           shadowClr="green"
         />
         <Card
-          name={'Spoken Tutorial'}
+          name={'Beu News'}
           navigation={navigation}
           screen={'BeuResult'}
           image={require('../Image/result.png')}

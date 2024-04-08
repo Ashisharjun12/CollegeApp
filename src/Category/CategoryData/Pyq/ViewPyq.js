@@ -2,13 +2,14 @@ import { StyleSheet, Dimensions, View } from 'react-native';
 import React from 'react'
 import Pdf from 'react-native-pdf';
 
-const Holiday = () => {
+const ViewPyq = ({route}) => {
+    const {url} =route.params
   return (
     <View style={styles.container}>
     <Pdf
     trustAllCerts={false}
     
-        source={require('./../../../Assets/Pdf/holiday.pdf')}
+        source={{uri: url}}
         onLoadComplete={(numberOfPages,filePath) => {
             console.log(`Number of pages: ${numberOfPages}`);
         }}
@@ -26,7 +27,7 @@ const Holiday = () => {
   )
 }
 
-export default Holiday
+export default ViewPyq
 
 
 const styles = StyleSheet.create({
