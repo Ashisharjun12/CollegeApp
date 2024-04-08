@@ -58,7 +58,7 @@ const Chat = ({navigation}) => {
         {
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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",
+            "Authorization": "Api Key",
           },
         }
       );
