@@ -6,7 +6,6 @@ import { GiftedChat } from 'react-native-gifted-chat';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
-
 const Chat = ({navigation}) => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -21,7 +20,7 @@ const Chat = ({navigation}) => {
     setMessages([
       {
         _id: 1,
-        text: 'Hey, Ask Me AnyThing ?',
+        text: 'Hey, How can I help You ?',
         createdAt: new Date(),
         user: {
           _id: 2,
@@ -35,7 +34,7 @@ const Chat = ({navigation}) => {
   const handleSend = async (newMessages = []) => {
     const userMessage = newMessages[0].text;
     const newMessage = {
-      _id: Date.now(),
+      _id: Math.random().toString(36).substring(7),
       text: userMessage,
       createdAt: new Date(),
       user: {
@@ -58,14 +57,14 @@ const Chat = ({navigation}) => {
         {
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Api Key",
+            "Authorization": "Bearer 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",
           },
         }
       );
 
       const botMessage = response.data.choices[0]?.message?.content || 'No response text.';
       const botReply = {
-        _id: Date.now(),
+        _id: Math.random().toString(36).substring(7),
         text: botMessage,
         createdAt: new Date(),
         user: {
@@ -95,11 +94,11 @@ const Chat = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-    <TouchableOpacity  onPress={()=> navigation.goBack()}
-    style={{marginLeft:responsiveWidth(5),marginTop:responsiveHeight(2)}}>
-   <Ionicons name="arrow-back-sharp" color={'black'} size={30} />
-   </TouchableOpacity>
-   <View style={{width:"100%",height:responsiveHeight(0.3),backgroundColor:"#DDDDDD"}}></View>
+      <TouchableOpacity  onPress={()=> navigation.goBack()}
+       style={{marginLeft:responsiveWidth(5),marginTop:responsiveHeight(2)}}>
+      <Ionicons name="arrow-back-sharp" color={'black'} size={30} />
+      </TouchableOpacity>
+      <View style={{width:"100%",height:responsiveHeight(0.3),backgroundColor:"#DDDDDD"}}></View>
         
       <GiftedChat
         messages={messages}
@@ -107,7 +106,7 @@ const Chat = ({navigation}) => {
         user={{
           _id: 1,
         }}
-        renderLoading={() => <ActivityIndicator size="large" color="black" />}
+        renderLoading={() => <ActivityIndicator size="large" color="blue" />}
         renderAvatarOnTop
         showUserAvatar
         isTyping={isBotTyping}
@@ -124,4 +123,3 @@ const styles = StyleSheet.create({
     backgroundColor:'#F1FCFD'
   }
 });
-

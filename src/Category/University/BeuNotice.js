@@ -1,13 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Library = () => {
+const BeuNotice = () => {
   return (
     <View>
-      
-      <Text>Library jkjkdjbbds</Text>
+      <Text>BeuNotice</Text>
     </View>
   )
 }
 
-export default Library
+export default BeuNotice

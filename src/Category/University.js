@@ -67,7 +67,7 @@ const University = () => {
         <Card
           name={'Form FillUp'}
           navigation={navigation}
-          screen={'Holiday'}
+          screen={'Form'}
           image={require('../Image/holiday.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
@@ -79,7 +79,7 @@ const University = () => {
         <Card
           name={'Beu Notice'}
           navigation={navigation}
-          screen={'BeuResult'}
+          screen={'BeuNotice'}
           image={require('../Image/result.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
@@ -91,7 +91,7 @@ const University = () => {
         <Card
           name={'Beu News'}
           navigation={navigation}
-          screen={'BeuResult'}
+          screen={'BeuNews'}
           image={require('../Image/result.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),

@@ -27,6 +27,13 @@ import Nptel from '../Category/Portal/Nptel';
 import Pms from '../Category/Portal/Pms';
 import Schlorship from '../Category/Portal/Schlorship';
 import Spoken from '../Category/Portal/Spoken';
+import Form from '../Category/University/Form';
+import BeuNotice from '../Category/University/BeuNotice';
+import BeuNews from '../Category/University/BeuNews';
+import SelfHelp from '../Screen/SelfHelp';
+import ApplyEvent from '../Screen/ApplyEvent';
+
+
 
 const Stack = createNativeStackNavigator();
 
@@ -79,6 +86,13 @@ const AppStack = () => {
       <Stack.Screen
         name="Library"
         component={Library}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="SelfHelp"
+        component={SelfHelp}
         options={{
           headerShown: false,
         }}
@@ -195,6 +209,28 @@ const AppStack = () => {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="Form"
+        component={Form}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="BeuNotice"
+        component={BeuNotice}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="BeuNews"
+        component={BeuNews}
+        options={{
+          headerShown: false,
+        }}
+      />
+    
 
       {/* University Data End */}
 
@@ -244,6 +280,20 @@ const AppStack = () => {
 
 
       {/* Portal Data End */}
+
+
+      {/* Your Events */}
+      <Stack.Screen
+        name="ApplyEvent"
+        component={ApplyEvent}
+        options={{
+          headerShown: false,
+        }}
+      />
+      {/* Your Event End */}
+
+
+    
     </Stack.Navigator>
   );
 };

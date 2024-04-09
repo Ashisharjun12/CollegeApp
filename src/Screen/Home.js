@@ -59,7 +59,7 @@ const Home = () => {
               justifyContent: 'center',
             }}>
             <Image
-              style={{width: responsiveWidth(18), height: responsiveHeight(8)}}
+              style={{width: responsiveWidth(18), height: responsiveHeight(8.3)}}
               source={require('../Image/avtar.png')}
             />
           </View>
@@ -130,7 +130,7 @@ const Home = () => {
               marginLeft: responsiveWidth(2.5),
               marginBottom: responsiveHeight(2.5),
               fontWeight: 'bold',
-              fontFamily:'Segoe UI'
+             
             }}>
             Explore Categories
           </Text>
@@ -204,6 +204,29 @@ const Home = () => {
               image={require('../Image/sem.png')}
               imageStyle={{width: responsiveWidth(40)}}
               screen="University"
+              navigation={navigation}
+            />
+          </View>
+          <View
+            style={{
+              flexDirection: 'row',
+              gap: responsiveWidth(3),
+              marginTop: responsiveHeight(1),
+            }}>
+            <CommonCategory
+              name={'Library'}
+              bgcolor="#FF9800"
+              image={require('../Image/sem.png')}
+              imageStyle={{width: responsiveWidth(40)}}
+              screen="Library"
+              navigation={navigation}
+            />
+            <CommonCategory
+              name={'SelfHelp'}
+              bgcolor="#378CE7"
+              image={require('../Image/sem.png')}
+              imageStyle={{width: responsiveWidth(40)}}
+              screen="SelfHelp"
               navigation={navigation}
             />
           </View>

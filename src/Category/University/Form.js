@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator, StyleSheet } from 'react-native';
 import { WebView } from 'react-native-webview';
 
-const Spoken = () => {
+const Form = () => {
   const [loading, setLoading] = useState(true);
 
   const handleLoadStart = () => {
@@ -16,13 +16,13 @@ const Spoken = () => {
   return (
     <View style={styles.container}>
       <WebView
-        source={{ uri: 'https://spoken-tutorial.org/' }}
+        source={{ uri: 'https://beu.intelliexams.com/beuexams/frmIntelliHomePage.aspx' }}
         style={styles.webview}
         onLoadStart={handleLoadStart}
         onLoadEnd={handleLoadEnd}
       />
       {loading && (
-        <View style={styles.loading}>
+        <View style={styles.loadingContainer}>
           <ActivityIndicator size={55} color="black" />
         </View>
       )}
@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
   webview: {
     flex: 1,
   },
-  loading: {
+  loadingContainer: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: 'white', 
+    backgroundColor: 'white',
     justifyContent: 'center',
     alignItems: 'center',
   },
 });
 
-export default Spoken;
+export default Form;

@@ -1,12 +1,48 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react';
+import { View, StyleSheet, ActivityIndicator } from 'react-native';
+import { WebView } from 'react-native-webview';
 
 const Nptel = () => {
-  return (
-    <View>
-      <Text>Nptel</Text>
-    </View>
-  )
-}
+  const [loading, setLoading] = useState(true);
 
-export default Nptel
+  const handleLoadStart = () => {
+    setLoading(true);
+  };
+
+  const handleLoadEnd = () => {
+    setLoading(false);
+  };
+
+  return (
+    <View style={styles.container}>
+      <WebView
+        source={{ uri: 'https://nptel.ac.in/' }}
+        style={styles.webview}
+        onLoadStart={handleLoadStart}
+        onLoadEnd={handleLoadEnd}
+      />
+      {loading && (
+        <View style={styles.loading}>
+          <ActivityIndicator size={55} color="black" />
+        </View>
+      )}
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  webview: {
+    flex: 1,
+  },
+  loading: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'white', 
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
+
+export default Nptel;

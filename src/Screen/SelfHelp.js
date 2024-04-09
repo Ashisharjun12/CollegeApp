@@ -1,13 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const Library = () => {
+const SelfHelp = () => {
   return (
     <View>
-      
-      <Text>Library jkjkdjbbds</Text>
+      <Text>SelfHelp</Text>
     </View>
   )
 }
 
-export default Library
+export default SelfHelp
