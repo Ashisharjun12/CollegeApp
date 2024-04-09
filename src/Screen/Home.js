@@ -6,7 +6,9 @@ import {
   TextInput,
   ScrollView,
 } from 'react-native';
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
+import Snackbar from 'react-native-snackbar'
+import {AppwriteContex} from '../Appwrite/AppwriteContex'
 
 import {
   responsiveHeight,
@@ -17,6 +19,8 @@ import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
 import CommonCategory from '../Category/CommonCategory';
+
+
 
 const Home = () => {
   const navigation = useNavigation();
