@@ -17,8 +17,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Button from '../Common/Button';
-import { useContext } from 'react';
-import AppwriteContext from '../Appwrite/AppwriteContex';
+
 
 const Register = () => {
   const [firstName ,SetfirstName]=useState()
@@ -27,28 +26,6 @@ const Register = () => {
 
   const navigation = useNavigation();
   
-  const {appwrite,setIsLoggedIn}=useContext(AppwriteContext)
-const handelsub =async()=>{
-  const data = {
-   
-    email,
-    password,
-    name: firstName
-  }
-  
-   await appwrite.createAccount(data).then((response) => {
-    if (response) {
-      setIsLoggedIn(true);
-      Snackbar.show({
-        text: 'Signup success',
-        duration: Snackbar.LENGTH_LONG,
-      });
-    }
-  });
-  
-  
-  
-}
 
   return (
     <KeyboardAvoidingView
@@ -237,7 +214,7 @@ const handelsub =async()=>{
               </View>
             </View>
           </View>
-                  <TouchableOpacity onPress={handelsub}>
+                  <TouchableOpacity >
                   <Button  name={'Sign Up'} />
                   </TouchableOpacity>
         

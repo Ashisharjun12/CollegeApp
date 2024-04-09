@@ -16,23 +16,11 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-import AppwriteContext from '../Appwrite/AppwriteContex';
-import {useContext} from 'react';
 import CommonCategory from '../Category/CommonCategory';
 
 const Home = () => {
   const navigation = useNavigation();
 
-  const {appwrite, setCurrentuserinfo, currentuserinfo} =
-    useContext(AppwriteContext);
-
-  const getuser = async () => {
-    const user = await appwrite.getCurrentUser();
-    setCurrentuserinfo(user);
-    console.log(user);
-  };
-
-  getuser();
 
   return (
     <ScrollView style={{backgroundColor: '#ECEDF2', height: '100%'}}>

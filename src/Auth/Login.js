@@ -19,9 +19,7 @@ import {
 } from 'react-native-responsive-dimensions';
 
 
-const handelLogin= ()=>{
- 
-}
+
 
 const Login = () => {
 
@@ -136,7 +134,7 @@ const Login = () => {
                 />
               </View>
             </View>
-            <TouchableOpacity onPress={()=>navigation.navigate('')}>
+            <TouchableOpacity onPress={()=>navigation.navigate('MainStack')}>
                   
             <Button name={'Login'} />
             </TouchableOpacity>

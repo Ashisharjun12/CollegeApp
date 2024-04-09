@@ -5,6 +5,7 @@ import axios from 'axios';
 import { GiftedChat } from 'react-native-gifted-chat';
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
+import GoBack from '../Common/GoBack';
 
 const Chat = ({navigation}) => {
   const [messages, setMessages] = useState([]);
@@ -57,7 +58,7 @@ const Chat = ({navigation}) => {
         {
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer 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",
+            "Authorization": "Bearer api key",
           },
         }
       );
@@ -94,11 +95,7 @@ const Chat = ({navigation}) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity  onPress={()=> navigation.goBack()}
-       style={{marginLeft:responsiveWidth(5),marginTop:responsiveHeight(2)}}>
-      <Ionicons name="arrow-back-sharp" color={'black'} size={30} />
-      </TouchableOpacity>
-      <View style={{width:"100%",height:responsiveHeight(0.3),backgroundColor:"#DDDDDD"}}></View>
+<GoBack/>
         
       <GiftedChat
         messages={messages}
@@ -106,7 +103,7 @@ const Chat = ({navigation}) => {
         user={{
           _id: 1,
         }}
-        renderLoading={() => <ActivityIndicator size="large" color="blue" />}
+        renderLoading={() => <ActivityIndicator size="large" color="black" />}
         renderAvatarOnTop
         showUserAvatar
         isTyping={isBotTyping}
@@ -120,6 +117,6 @@ export default Chat;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#F1FCFD'
+    backgroundColor:'#ECEDF2'
   }
 });

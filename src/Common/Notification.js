@@ -1,12 +1,30 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text} from 'react-native';
+import React from 'react';
+import {
+  responsiveFontSize,
+  responsiveHeight,
+} from 'react-native-responsive-dimensions';
+import GoBack from './GoBack';
 
 const Notification = () => {
   return (
     <View>
-      <Text>Notification</Text>
+<GoBack/>
+    
+    <View style={{marginTop: responsiveHeight(40)}}>
+      <Text
+        style={{
+          fontSize: responsiveFontSize(2.8),
+          fontWeight: 'bold',
+          color: 'black',
+          alignSelf: 'center',
+        }}>
+        {' '}
+        No Notifications 😒
+      </Text>
     </View>
-  )
-}
+    </View>
+  );
+};
 
-export default Notification
+export default Notification;
