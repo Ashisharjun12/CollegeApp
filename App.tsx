@@ -1,15 +1,14 @@
-import { View, Text } from 'react-native'
-import React from 'react'
-import Route from './src/Navigation/Route'
-
-
+import {View, Text} from 'react-native';
+import React from 'react';
+import Route from './src/Navigation/Route';
+import {AppwriteProvider} from './src/Appwrite/AppwriteContex';
 
 const App = () => {
   return (
+    <AppwriteProvider>
+      <Route />
+    </AppwriteProvider>
+  );
+};
 
- <Route/>
-    
-  )
-}
-
-export default App
+export default App;

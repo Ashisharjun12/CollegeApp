@@ -6,7 +6,7 @@ import {
   Linking,
   Alert,
 } from 'react-native';
-import React from 'react';
+import React,{useContext,useState,useEffect} from 'react';
 import {
   responsiveFontSize,
   responsiveHeight,
@@ -18,9 +18,47 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import share from 'react-native-share';
 import Button from '../Common/Button';
+import Snackbar from 'react-native-snackbar'
+import {AppwriteContex} from '../Appwrite/AppwriteContex'
 
 const Profile = () => {
+
   const navigation = useNavigation();
+
+
+  const [userData ,setUserData] = useState({})
+
+  const {appwrite ,setIsLoggedIn} = useContext(AppwriteContex)
+
+const handleLogOut = () =>{
+  appwrite.logout()
+  .then(()=>{
+    setIsLoggedIn(false);
+    Snackbar.show({
+      text:'LogOut SuccessFully!',
+      duration:Snackbar.LENGTH_SHORT
+    })
+  })
+
+}
+
+
+
+const dataFetch = async()=>{
+  const data = await appwrite.getCurrentUser()
+ 
+       setUserData(data)
+
+}
+useEffect(()=>{
+
+  dataFetch()
+  
+},[appwrite])
+
+
+
+
 
   const ShareApp = async () => {
     const options = {
@@ -80,7 +118,7 @@ const Profile = () => {
             fontWeight: '500',
             marginTop: responsiveHeight(2.5),
           }}>
-          Hey, Ashish
+          Hey, {userData.name}
         </Text>
       </View>
 
@@ -104,7 +142,7 @@ const Profile = () => {
                 color: 'black',
                 fontWeight: '500',
               }}>
-              ashishrahul748@gmail.com
+            {userData.email}
             </Text>
           </View>
         </View>
@@ -266,7 +304,7 @@ const Profile = () => {
             marginTop: responsiveHeight(1),
           }}></View>
       </View>
-      <TouchableOpacity onPress={console.log('LoutOut')}>
+      <TouchableOpacity onPress={handleLogOut}>
         <Button
           name={'Logout'}
           stylebtn={{width: responsiveWidth(92)}}

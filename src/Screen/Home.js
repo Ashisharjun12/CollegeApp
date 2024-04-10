@@ -6,8 +6,7 @@ import {
   TextInput,
   ScrollView,
 } from 'react-native';
-import React, {useState,useContext} from 'react';
-import Snackbar from 'react-native-snackbar'
+import React, {useState,useContext, useEffect} from 'react';
 import {AppwriteContex} from '../Appwrite/AppwriteContex'
 
 import {
@@ -23,7 +22,26 @@ import CommonCategory from '../Category/CommonCategory';
 
 
 const Home = () => {
+ 
+
   const navigation = useNavigation();
+
+  const [userData ,setUserData] = useState({})
+
+  const {appwrite } = useContext(AppwriteContex)
+
+
+  const dataFetch = async()=>{
+    const data = await appwrite.getCurrentUser()
+         setUserData(data)
+
+  }
+
+
+useEffect(()=>{
+     
+    dataFetch()
+},[appwrite])
 
 
   return (
@@ -69,7 +87,7 @@ const Home = () => {
               fontWeight: '500',
               marginTop: responsiveHeight(3),
             }}>
-            Hey , ashish
+            Hey , {userData.name}
           </Text>
           <Text
             style={{

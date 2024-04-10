@@ -1,18 +1,14 @@
 import { View, Text } from 'react-native'
-import React, { FC, PropsWithChildren, useState } from 'react'
+import React, { FC, PropsWithChildren, useState ,createContext} from 'react'
 
 import Appwrite from './Service'
 
 
-type AppContexType={
-    appwrite :Appwrite;
-    isLoggedIn:boolean;
-    setIsLoggedIn :(isLoggedIn:boolean) =>void
-}
 
-export const  AppwriteContex = createContex<AppContexType>({
-    appwrite : new Appwrite();
-    isLoggedIn:false;
+
+export const  AppwriteContex = createContext({
+    appwrite : new Appwrite(),
+    isLoggedIn:false,
     setIsLoggedIn :() =>{}
 
 })

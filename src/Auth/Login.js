@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState ,useContext} from 'react';
 import {
   View,
   Text,
@@ -12,6 +12,8 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Button from '../Common/Button';
+import Snackbar from 'react-native-snackbar'
+import {AppwriteContex} from '../Appwrite/AppwriteContex'
 import {
   responsiveWidth,
   responsiveHeight,
@@ -23,8 +25,34 @@ import {
 
 const Login = () => {
 
-
+  const {appwrite ,setIsLoggedIn} = useContext(AppwriteContex)
   const navigation = useNavigation();
+
+  const [ email ,setEmail ] = useState()
+  const [ password ,setPassword] = useState()
+
+  const handleLogin = () =>{
+     const user = {
+      email ,
+      password
+     }
+
+     appwrite.login(user)
+        .then((response)=>{
+          setIsLoggedIn(true)
+          Snackbar.show({
+            text:'Login SuccessFully!',
+            duration:Snackbar.LENGTH_SHORT
+          })
+
+        })
+        .catch(e => {
+          console.log(e)
+         setEmail("Incorrect Email or Password")
+        })
+  }
+
+
 
   return (
     <KeyboardAvoidingView
@@ -96,6 +124,8 @@ const Login = () => {
                     fontSize: responsiveFontSize(2.3),
                   }}
                   placeholder="johndoe@gmail.com"
+                  value={email}
+                  onChangeText={txt =>setEmail(txt)}
                 />
               </View>
 
@@ -130,11 +160,13 @@ const Login = () => {
                     fontSize: responsiveFontSize(2.3),
                   }}
                   placeholder="password"
+                  value={password}
+                  onChangeText={txt =>setPassword(txt)}
                   secureTextEntry={true}
                 />
               </View>
             </View>
-            <TouchableOpacity onPress={()=>navigation.navigate('MainStack')}>
+            <TouchableOpacity onPress={handleLogin}>
                   
             <Button name={'Login'} />
             </TouchableOpacity>

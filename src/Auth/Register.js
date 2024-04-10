@@ -8,23 +8,56 @@ import {
   Platform,
   ScrollView,
 } from 'react-native';
-import React, { useState } from 'react';
+import React, { useState,useContext,useEffect } from 'react';
 import {
   responsiveWidth,
   responsiveHeight,
   responsiveFontSize,
 } from 'react-native-responsive-dimensions';
+import Snackbar from 'react-native-snackbar'
+import {AppwriteContex} from '../Appwrite/AppwriteContex'
 import {useNavigation} from '@react-navigation/native';
 import Octicons from 'react-native-vector-icons/Octicons';
 import Button from '../Common/Button';
 
 
 const Register = () => {
+  const navigation = useNavigation();
+  const {appwrite ,setIsLoggedIn} = useContext(AppwriteContex)
+
+
   const [firstName ,SetfirstName]=useState()
   const [email ,Setemail]=useState()
   const [password ,Setpassword]=useState()
 
-  const navigation = useNavigation();
+
+
+const handleSignUp = () =>{
+    const user = {
+      email ,
+      password ,
+      name : firstName
+    }
+
+    appwrite.createAccount(user)
+      .then( (response) =>{
+        if (response) {
+          setIsLoggedIn(true)
+          Snackbar({
+            text:'SignUp Successfull!',
+            duration:Snackbar.LENGTH_SHORT
+          })
+          
+        }
+
+      })
+      .catch(e => {
+        console.log(e)
+      })
+}
+  
+
+
   
 
   return (
@@ -214,7 +247,7 @@ const Register = () => {
               </View>
             </View>
           </View>
-                  <TouchableOpacity >
+                  <TouchableOpacity  onPress={handleSignUp}>
                   <Button  name={'Sign Up'} />
                   </TouchableOpacity>
         
