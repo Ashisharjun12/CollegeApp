@@ -20,6 +20,7 @@
     "react-native": "0.73.6",
     "react-native-blob-util": "^0.19.8",
     "react-native-config": "^1.5.1",
+    "react-native-document-picker": "^9.1.1",
     "react-native-gesture-handler": "^2.16.0",
     "react-native-gifted-chat": "^2.4.0",
     "react-native-pdf": "^6.7.4",
@@ -29,7 +30,8 @@
     "react-native-share": "^10.1.0",
     "react-native-snackbar": "^2.6.2",
     "react-native-vector-icons": "^10.0.3",
-    "react-native-webview": "^13.8.4"
+    "react-native-webview": "^13.8.4",
+    "rn-fetch-blob": "^0.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

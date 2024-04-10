@@ -20,6 +20,7 @@ import share from 'react-native-share';
 import Button from '../Common/Button';
 import Snackbar from 'react-native-snackbar'
 import {AppwriteContex} from '../Appwrite/AppwriteContex'
+import DocumentPicker from 'react-native-document-picker'
 
 const Profile = () => {
 
@@ -85,6 +86,24 @@ useEffect(()=>{
     Linking.openURL(mailTo);
   };
 
+
+
+  //select profile image
+
+
+   const [ selectImg ,setSelectImg]=useState()
+  const selectDoc = async () => {
+    try {
+      const doc = await DocumentPicker.pick({
+        type:[DocumentPicker.types.images]
+      });
+      setSelectImg(doc[0].uri);
+    
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <View>
       {/* profile */}
@@ -98,17 +117,21 @@ useEffect(()=>{
           borderBottomRightRadius: 23,
           borderBottomLeftRadius: 23,
         }}>
-        <View
+        <TouchableOpacity onPress={selectDoc}
           style={{
             justifyContent: 'center',
             alignItems: 'center',
             marginTop: responsiveHeight(7),
           }}>
-          <Image
-            style={{width: responsiveWidth(33.4), height: responsiveHeight(15)}}
-            source={require('../Image/avtar.png')}
-          />
-        </View>
+
+            
+              <Image
+                style={{width: responsiveWidth(33.4), height: responsiveHeight(15) ,borderRadius:99}}
+                source={ selectImg ? {uri:selectImg} : require('../Image/avtar.png')}
+              />
+            
+         
+        </TouchableOpacity>
 
         <Text
           style={{

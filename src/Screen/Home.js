@@ -69,7 +69,7 @@ useEffect(()=>{
               justifyContent: 'center',
             }}>
             <Image
-              style={{width: responsiveWidth(18), height: responsiveHeight(8.3)}}
+              style={{width: responsiveWidth(18), height: responsiveHeight(8.3),borderRadius:99}}
               source={require('../Image/avtar.png')}
             />
           </View>

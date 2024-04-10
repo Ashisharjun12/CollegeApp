@@ -11,6 +11,8 @@ import GoBack from '../../../Common/GoBack';
 
 const BtechSub = () => {
   const navigation = useNavigation();
+
+  console.log(BtechJson[0].Branch[0].Semester[0].subjects)
   
 
   return (
@@ -33,7 +35,7 @@ const BtechSub = () => {
         return( 
             <TouchableOpacity
               key={subName.id}
-              onPress={() => navigation.navigate('BtechModule')}
+              onPress={() => navigation.navigate('BtechModule' ,{url:subName.Pdf_url})}
               style={{
                 marginBottom:responsiveHeight(2.5),
                 width: responsiveWidth(93),

@@ -31,7 +31,7 @@ const ModuleData = () => {
             fontWeight: 'bold',
             alignSelf: 'center',
           }}>
-         {BtechJson[0].Branch[0].Semester[0].subjects[0].Module_List[0].Module[0].Topic_Title}
+        jklklkh
         </Text>
       </View> 
 

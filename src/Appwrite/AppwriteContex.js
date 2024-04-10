@@ -5,7 +5,6 @@ import Appwrite from './Service'
 
 
 
-
 export const  AppwriteContex = createContext({
     appwrite : new Appwrite(),
     isLoggedIn:false,
