@@ -1,5 +1,5 @@
 import { View, Text } from 'react-native'
-import React, { FC, PropsWithChildren, useState ,createContext} from 'react'
+import React, { useState ,createContext} from 'react'
 
 import Appwrite from './Service'
 
@@ -13,7 +13,7 @@ export const  AppwriteContex = createContext({
 
 })
 
-export const AppwriteProvider : FC<PropsWithChildren> = ({children}) => {
+export const AppwriteProvider  = ({children}) => {
 const [isLoggedIn ,setIsLoggedIn]=useState(false)
 const defalutValue = {
     appwrite : new Appwrite(),

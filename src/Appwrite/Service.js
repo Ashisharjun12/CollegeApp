@@ -4,20 +4,9 @@ import Snackbar from 'react-native-snackbar'
 
 const appwriteClient = new Client()
 
-const APPWRITE_ENDPOINT :string = Config.APPWRITE_ENDPOINT!
-const APPWRITE_PROJECT_ID :string =Config.APPWRITE_PROJECT_ID!
+const APPWRITE_ENDPOINT  = Config.APPWRITE_ENDPOINT
+const APPWRITE_PROJECT_ID  =Config.APPWRITE_PROJECT_ID
 
-type CreateUserAccount ={
-    email:string;
-    password:string;
-    name:string;
-}
-
-type LoginUserAccount ={
-    email:string;
-    password:string;
-    
-}
 
 
 class AppwriteService {
@@ -35,8 +24,8 @@ class AppwriteService {
 
     //create user inside appwrite
 
-    async createAccount({email ,password,name}:
-        CreateUserAccount){
+    async createAccount({email ,password,name}
+       ){
             try {
               const userAccount = await this.account.create(
                     ID.unique(),
@@ -63,7 +52,7 @@ class AppwriteService {
             }
         }
 
-        async login({email ,password}:LoginUserAccount){
+        async login({email ,password}){
             try {
                return  await this.account.createEmailPasswordSession(email,password)
                 
