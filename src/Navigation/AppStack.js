@@ -30,8 +30,14 @@ import Spoken from '../Category/Portal/Spoken';
 import Form from '../Category/University/Form';
 import BeuNotice from '../Category/University/BeuNotice';
 import BeuNews from '../Category/University/BeuNews';
-import SelfHelp from '../Screen/SelfHelp';
 import ApplyEvent from '../Screen/ApplyEvent';
+import AllCategory from '../Screen/AllCategory';
+import Merch from '../Screen/Merch';
+import Campus from '../Screen/Campus';
+import SelfHelp from '../Category/Library/SelfHelp';
+import ViewSelfHelp from '../Category/Library/ViewSelfHelp';
+import FamousBook from '../Category/Library/FamousBook';
+import Biography from '../Category/Library/Biography';
 
 
 
@@ -91,12 +97,13 @@ const AppStack = () => {
         }}
       />
       <Stack.Screen
-        name="SelfHelp"
-        component={SelfHelp}
+        name="Campus"
+        component={Campus}
         options={{
           headerShown: false,
         }}
       />
+    
 
       {/* Category stack end */}
 
@@ -291,6 +298,71 @@ const AppStack = () => {
         }}
       />
       {/* Your Event End */}
+
+
+
+      {/* All Category  */}
+
+      <Stack.Screen
+        name="AllCategory"
+        component={AllCategory}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+
+      {/* All Category end */}
+
+      {/* screen cat */}
+
+ <Stack.Screen
+        name="Merch"
+        component={Merch}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      {/* screen cat end */}
+
+    
+
+
+
+      {/* Library start */}
+      <Stack.Screen
+        name="SelfHelp"
+        component={SelfHelp}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="ViewSelfHelp"
+        component={ViewSelfHelp}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="FamousBook"
+        component={FamousBook}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Biography"
+        component={Biography}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+
+
+      {/* Library end */}
 
 
     

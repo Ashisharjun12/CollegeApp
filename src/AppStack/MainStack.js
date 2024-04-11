@@ -1,7 +1,7 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import Entypo from 'react-native-vector-icons/Entypo';
-import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
@@ -31,13 +31,13 @@ const MainStack = () => {
         }}
       />
       <Tab.Screen
-        name="Chat"
+        name="Ai Chat"
         component={Chat}
         options={{
           headerShown: false,
           tabBarStyle: {display: 'none'},
           tabBarIcon: ({color, size}) => (
-            <FontAwesome6 name="robot" color={color} size={size} />
+            <Ionicons name="sparkles-sharp" color={color} size={size} />
           ),
         }}
       />

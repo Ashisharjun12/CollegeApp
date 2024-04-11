@@ -83,7 +83,7 @@ const UniversityData = () => {
         </View>
       <View>
         {loading ? (
-          <ActivityIndicator size="large" color="black" />
+          <ActivityIndicator size={42} color="black" />
         ) : (
           filteredColleges.length > 0 &&
           filteredColleges.map(clg => (
@@ -95,9 +95,9 @@ const UniversityData = () => {
                 width: responsiveWidth(93),
                 height: responsiveHeight(8),
                 paddingHorizontal: responsiveWidth(3),
-                backgroundColor: '#537FE7',
+                backgroundColor: '#387ADF',
                 alignSelf: 'center',
-                borderRadius: 13,
+                borderRadius: 9,
                 flexDirection: 'row',
                 justifyContent: 'center',
                 alignItems: 'center',

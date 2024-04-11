@@ -6,60 +6,50 @@ import {
   Linking,
   Alert,
 } from 'react-native';
-import React,{useContext,useState,useEffect} from 'react';
+import React, {useContext, useState, useEffect} from 'react';
 import {
   responsiveFontSize,
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
+import Modal from 'react-native-modal';
 import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import share from 'react-native-share';
 import Button from '../Common/Button';
-import Snackbar from 'react-native-snackbar'
-import {AppwriteContex} from '../Appwrite/AppwriteContex'
-import DocumentPicker from 'react-native-document-picker'
+import Snackbar from 'react-native-snackbar';
+import {AppwriteContex} from '../Appwrite/AppwriteContex';
+import DocumentPicker from 'react-native-document-picker';
 
 const Profile = () => {
-
   const navigation = useNavigation();
 
+  const [isVisible, setIsVisible] = useState(false);
+  const [userData, setUserData] = useState({});
 
-  const [userData ,setUserData] = useState({})
+  const {appwrite, setIsLoggedIn} = useContext(AppwriteContex);
 
-  const {appwrite ,setIsLoggedIn} = useContext(AppwriteContex)
+  const handleLogOut = () => {
+    appwrite.logout().then(() => {
+      setIsLoggedIn(false);
+      Snackbar.show({
+        text: 'LogOut SuccessFully!',
+        duration: Snackbar.LENGTH_SHORT,
+      });
+    });
+  };
 
-const handleLogOut = () =>{
-  appwrite.logout()
-  .then(()=>{
-    setIsLoggedIn(false);
-    Snackbar.show({
-      text:'LogOut SuccessFully!',
-      duration:Snackbar.LENGTH_SHORT
-    })
-  })
+  const dataFetch = async () => {
+    const data = await appwrite.getCurrentUser();
 
-}
-
-
-
-const dataFetch = async()=>{
-  const data = await appwrite.getCurrentUser()
- 
-       setUserData(data)
-
-}
-useEffect(()=>{
-
-  dataFetch()
-  
-},[appwrite])
-
-
-
-
+    setUserData(data);
+  };
+  useEffect(() => {
+    dataFetch();
+  }, [appwrite]);
 
   const ShareApp = async () => {
     const options = {
@@ -86,19 +76,15 @@ useEffect(()=>{
     Linking.openURL(mailTo);
   };
 
-
-
   //select profile image
 
-
-   const [ selectImg ,setSelectImg]=useState()
+  const [selectImg, setSelectImg] = useState();
   const selectDoc = async () => {
     try {
       const doc = await DocumentPicker.pick({
-        type:[DocumentPicker.types.images]
+        type: [DocumentPicker.types.images],
       });
       setSelectImg(doc[0].uri);
-    
     } catch (error) {
       console.error(error);
     }
@@ -107,30 +93,39 @@ useEffect(()=>{
   return (
     <View>
       {/* profile */}
-     
 
       <View
         style={{
           width: responsiveWidth(100),
           height: responsiveHeight(34),
           backgroundColor: 'black',
-          borderBottomRightRadius: 23,
-          borderBottomLeftRadius: 23,
+          borderBottomRightRadius: 14,
+          borderBottomLeftRadius: 14,
         }}>
-        <TouchableOpacity onPress={selectDoc}
+        <TouchableOpacity
+          onPress={selectDoc}
           style={{
             justifyContent: 'center',
             alignItems: 'center',
             marginTop: responsiveHeight(7),
           }}>
-
-            
-              <Image
-                style={{width: responsiveWidth(33.4), height: responsiveHeight(15) ,borderRadius:99}}
-                source={ selectImg ? {uri:selectImg} : require('../Image/avtar.png')}
-              />
-            
-         
+          <View
+            style={{
+              backgroundColor: '#FB6D48',
+              padding: 2.8,
+              borderRadius: 99,
+            }}>
+            <Image
+              style={{
+                width: responsiveWidth(33.4),
+                height: responsiveHeight(15),
+                borderRadius: 99,
+              }}
+              source={
+                selectImg ? {uri: selectImg} : require('../Image/avtar.png')
+              }
+            />
+          </View>
         </TouchableOpacity>
 
         <Text
@@ -158,21 +153,21 @@ useEffect(()=>{
               alignItems: 'center',
               gap: responsiveWidth(7),
             }}>
-            <Ionicons name="mail-outline" color={'black'} size={45} />
+            <Ionicons name="mail-outline" color={'black'} size={38} />
             <Text
               style={{
-                fontSize: responsiveFontSize(2.3),
+                fontSize: responsiveFontSize(2.2),
                 color: 'black',
                 fontWeight: '500',
               }}>
-            {userData.email}
+              {userData.email}
             </Text>
           </View>
         </View>
         <View
           style={{
             width: responsiveWidth(100),
-            height: responsiveHeight(0.3),
+            height: responsiveHeight(0.2),
             backgroundColor: '#B2B2B2',
             alignSelf: 'center',
             marginTop: responsiveHeight(1),
@@ -183,7 +178,7 @@ useEffect(()=>{
         <TouchableOpacity
           onPress={() => navigation.navigate('ApplyEvent')}
           style={{
-            marginTop: responsiveHeight(4),
+            marginTop: responsiveHeight(2),
             marginLeft: responsiveWidth(6),
           }}>
           <View
@@ -192,10 +187,10 @@ useEffect(()=>{
               alignItems: 'center',
               gap: responsiveWidth(7),
             }}>
-            <SimpleLineIcons name="event" color={'black'} size={42} />
+            <SimpleLineIcons name="event" color={'black'} size={34} />
             <Text
               style={{
-                fontSize: responsiveFontSize(2.3),
+                fontSize: responsiveFontSize(2.2),
                 color: 'black',
                 fontWeight: '500',
               }}>
@@ -206,7 +201,7 @@ useEffect(()=>{
         <View
           style={{
             width: responsiveWidth(100),
-            height: responsiveHeight(0.3),
+            height: responsiveHeight(0.2),
             backgroundColor: '#B2B2B2',
             alignSelf: 'center',
             marginTop: responsiveHeight(1),
@@ -217,7 +212,7 @@ useEffect(()=>{
         <TouchableOpacity
           onPress={ShareApp}
           style={{
-            marginTop: responsiveHeight(2.8),
+            marginTop: responsiveHeight(1.4),
             marginLeft: responsiveWidth(6),
           }}>
           <View
@@ -230,11 +225,11 @@ useEffect(()=>{
               style={{marginBottom: responsiveHeight(1)}}
               name="share-google"
               color={'black'}
-              size={48}
+              size={45}
             />
             <Text
               style={{
-                fontSize: responsiveFontSize(2.3),
+                fontSize: responsiveFontSize(2.2),
                 color: 'black',
                 fontWeight: '500',
               }}>
@@ -245,7 +240,7 @@ useEffect(()=>{
         <View
           style={{
             width: responsiveWidth(100),
-            height: responsiveHeight(0.3),
+            height: responsiveHeight(0.2),
             backgroundColor: '#B2B2B2',
             alignSelf: 'center',
             marginTop: responsiveHeight(1),
@@ -255,7 +250,7 @@ useEffect(()=>{
         <TouchableOpacity
           onPress={reportIssue}
           style={{
-            marginTop: responsiveHeight(2.8),
+            marginTop: responsiveHeight(2),
             marginLeft: responsiveWidth(6),
           }}>
           <View
@@ -268,11 +263,11 @@ useEffect(()=>{
               style={{marginBottom: responsiveHeight(1)}}
               name="bug-outline"
               color={'black'}
-              size={44}
+              size={38}
             />
             <Text
               style={{
-                fontSize: responsiveFontSize(2.3),
+                fontSize: responsiveFontSize(2.2),
                 color: 'black',
                 fontWeight: '500',
               }}>
@@ -283,7 +278,7 @@ useEffect(()=>{
         <View
           style={{
             width: responsiveWidth(100),
-            height: responsiveHeight(0.3),
+            height: responsiveHeight(0.2),
             backgroundColor: '#B2B2B2',
             alignSelf: 'center',
             marginTop: responsiveHeight(1),
@@ -291,9 +286,8 @@ useEffect(()=>{
       </View>
       <View>
         <View
-          
           style={{
-            marginTop: responsiveHeight(2.8),
+            marginTop: responsiveHeight(2.5),
             marginLeft: responsiveWidth(6),
           }}>
           <View
@@ -306,11 +300,11 @@ useEffect(()=>{
               style={{marginBottom: responsiveHeight(1)}}
               name="git-compare-outline"
               color={'black'}
-              size={42}
+              size={38}
             />
             <Text
               style={{
-                fontSize: responsiveFontSize(2.3),
+                fontSize: responsiveFontSize(2.2),
                 color: 'black',
                 fontWeight: '500',
               }}>
@@ -321,10 +315,50 @@ useEffect(()=>{
         <View
           style={{
             width: responsiveWidth(100),
-            height: responsiveHeight(0.3),
+            height: responsiveHeight(0.2),
             backgroundColor: '#B2B2B2',
             alignSelf: 'center',
             marginTop: responsiveHeight(1),
+          }}></View>
+      </View>
+      <View>
+        <View
+          style={{
+            marginTop: responsiveHeight(2),
+            marginLeft: responsiveWidth(6),
+          }}>
+          <TouchableOpacity
+            onPress={() => {
+              setIsVisible(true);
+            }}
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              gap: responsiveWidth(7),
+            }}>
+            <FontAwesome
+              style={{marginBottom: responsiveHeight(1)}}
+              name="code"
+              color={'black'}
+              size={33}
+            />
+            <Text
+              style={{
+                fontSize: responsiveFontSize(2.2),
+                color: 'black',
+                fontWeight: '500',
+              }}>
+              Developer
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{
+            width: responsiveWidth(100),
+            height: responsiveHeight(0.2),
+            backgroundColor: '#B2B2B2',
+            alignSelf: 'center',
+            marginTop: responsiveHeight(0.4),
           }}></View>
       </View>
       <TouchableOpacity onPress={handleLogOut}>
@@ -334,6 +368,48 @@ useEffect(()=>{
           textStyle={{fontSize: responsiveFontSize(3)}}
         />
       </TouchableOpacity>
+
+      <Modal
+        style={{justifyContent: 'flex-end', margin: 0}}
+        animationIn={'slideInUp'}
+        isVisible={isVisible}
+        onBackdropPress={() => {
+          setIsVisible(false);
+        }}>
+        <View
+          style={{
+            width: responsiveWidth(100),
+            backgroundColor: 'white',
+            height: responsiveHeight(35),
+            borderTopLeftRadius: 19,
+            borderTopRightRadius: 19,
+          }}>
+
+            <View>
+              <Text style={{fontSize:responsiveFontSize(2.8),alignSelf:'center',marginTop:responsiveHeight(2.2),color:'black',fontWeight:'500'}}>Follow Us</Text>
+
+
+            <View style={{marginLeft:responsiveWidth(5),flexDirection:'row',gap:responsiveWidth(12),marginTop:responsiveHeight(3)}}>
+            <TouchableOpacity   onPress={()=>{Linking.openURL('https://www.instagram.com/_ashish.raj_10/')}}
+             style={{justifyContent:'center',alignItems:'center'}}>
+                <Image style={{resizeMode:'contain' ,width:responsiveWidth(14),height:responsiveHeight(12)}} source={require('../Image/instagram.png')}/>
+                <Text style={{color:'black',fontSize:responsiveFontSize(2.5),fontWeight:'500'}}>Instagram</Text>
+              </TouchableOpacity>
+            <TouchableOpacity onPress={()=>{Linking.openURL('https://www.linkedin.com/in/ashish-raj-300943188/')}}
+             style={{justifyContent:'center',alignItems:'center'}}>
+                <Image style={{resizeMode:'contain' ,width:responsiveWidth(14),height:responsiveHeight(12)}} source={require('../Image/linkedin.png')}/>
+                <Text style={{color:'black',fontSize:responsiveFontSize(2.5),fontWeight:'500'}}>Linkedin</Text>
+              </TouchableOpacity>
+            <TouchableOpacity onPress={()=>{Linking.openURL('https://github.com/Ashisharjun12')}}
+             style={{justifyContent:'center',alignItems:'center'}}>
+                <Image style={{resizeMode:'contain' ,width:responsiveWidth(14),height:responsiveHeight(12)}} source={require('../Image/github.png')}/>
+                <Text style={{color:'black',fontSize:responsiveFontSize(2.5),fontWeight:'500'}}>Github</Text>
+              </TouchableOpacity>
+            </View>
+             
+            </View>
+          </View>
+      </Modal>
     </View>
   );
 };

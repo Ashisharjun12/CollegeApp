@@ -5,6 +5,7 @@ import {
   Image,
   TextInput,
   ScrollView,
+  Pressable
 } from 'react-native';
 import React, {useState,useContext, useEffect} from 'react';
 import {AppwriteContex} from '../Appwrite/AppwriteContex'
@@ -17,7 +18,7 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Feather';
-import CommonCategory from '../Category/CommonCategory';
+import CategoryHome from '../Common/CategoryHome';
 
 
 
@@ -68,10 +69,12 @@ useEffect(()=>{
               alignItems: 'center',
               justifyContent: 'center',
             }}>
+              <View style={{backgroundColor:'#FB6D48',padding:2.8 ,borderRadius:99}}>
             <Image
               style={{width: responsiveWidth(18), height: responsiveHeight(8.3),borderRadius:99}}
               source={require('../Image/avtar.png')}
             />
+            </View>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate('Notification')}>
             <Ionicons name="notifications-outline" color={'black'} size={38} />
@@ -145,7 +148,7 @@ useEffect(()=>{
             Explore Categories
           </Text>
 
-          <View
+          <Pressable   onPress={()=>navigation.navigate('AllCategory')}
             style={{
               backgroundColor: 'black',
               alignItems: 'center',
@@ -163,85 +166,14 @@ useEffect(()=>{
               }}>
               View more
             </Text>
-          </View>
+          </Pressable>
         </View>
 
         {/* All Categories */}
 
-        <View>
-          <View
-            style={{
-              flexDirection: 'row',
-              gap: responsiveWidth(3),
-              marginBottom: responsiveHeight(1),
-            }}>
-            <CommonCategory
-              name={'Semester'}
-              bgcolor="#2EB872"
-              image={require('../Image/sem.png')}
-              imageStyle={{width: responsiveWidth(40)}}
-              screen="Semester"
-              navigation={navigation}
-            />
-
-            <CommonCategory
-              name={'Syllabus'}
-              bgcolor="#FA7070"
-              image={require('../Image/syllabus.png')}
-              imageStyle={{width: responsiveWidth(40)}}
-              screen="Syllabus"
-              navigation={navigation}
-            />
-          </View>
-
-          <View
-            style={{
-              flexDirection: 'row',
-              gap: responsiveWidth(3),
-              marginTop: responsiveHeight(1),
-            }}>
-            <CommonCategory
-              name={'Portal'}
-              bgcolor="#FF9800"
-              image={require('../Image/sem.png')}
-              imageStyle={{width: responsiveWidth(40)}}
-              screen="Portal"
-              navigation={navigation}
-            />
-            <CommonCategory
-              name={'University'}
-              bgcolor="#378CE7"
-              image={require('../Image/sem.png')}
-              imageStyle={{width: responsiveWidth(40)}}
-              screen="University"
-              navigation={navigation}
-            />
-          </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              gap: responsiveWidth(3),
-              marginTop: responsiveHeight(1),
-            }}>
-            <CommonCategory
-              name={'Library'}
-              bgcolor="#FF9800"
-              image={require('../Image/sem.png')}
-              imageStyle={{width: responsiveWidth(40)}}
-              screen="Library"
-              navigation={navigation}
-            />
-            <CommonCategory
-              name={'SelfHelp'}
-              bgcolor="#378CE7"
-              image={require('../Image/sem.png')}
-              imageStyle={{width: responsiveWidth(40)}}
-              screen="SelfHelp"
-              navigation={navigation}
-            />
-          </View>
-        
-        </View>
+       <View>
+        <CategoryHome/>
+       </View>
       </View>
     </ScrollView>
   );

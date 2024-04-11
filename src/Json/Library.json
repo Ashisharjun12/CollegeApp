@@ -1,0 +1,91 @@
+[
+    {
+        "Books":[
+            {   "id":1,
+                "Spritual":[
+                    {
+                        "id":1,
+                        "Name":"Bhabhat Gita",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617b9d330297a3fe8a8/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617a5cbe0821c964718/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    },
+                    {
+                        "id":2,
+                        "Name":"Ramayan",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617bbaabbb156a89810/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617b6dd5ab644ef3ed0/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    },
+                    {
+                        "id":3,
+                        "Name":"MahaBharat",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617bd541bfd9c88def5/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617be5340b8288a033a/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    }
+                   
+
+                ]
+            },
+            {   "id":2,
+                "Famous":[
+                    {
+                        "id":1,
+                        "Name":"Rich Dad Poor Dad",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617c9c6608d89546b88/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617cab9a58b39b4f535/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    },
+                    {
+                        "id":2,
+                        "Name":"Think And Grow Rich",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617cfae3177ea7a2242/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617d016b43f8e7412b8/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    },
+                    {
+                        "id":3,
+                        "Name":"Atomic Habits",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617d20a6ef56afca96d/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617d16c851860783c41/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    },
+                    {
+                        "id":4,
+                        "Name":"The Talent Code",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617d33f849a89db1277/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617d2a3e44b4ad46477/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    }
+
+                ]
+            },
+            {   "id":3,
+                "Biography":[
+
+                    {
+                        "id":1,
+                        "Name":"Steve Jobs",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617df06b363bf7fe1c7/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617de5d4990bf95d9d4/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    },
+                    {
+                        "id":2,
+                        "Name":"The Netflix",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617e0d014ec1d327c0f/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617e03bcc6cf603ef11/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    },
+                    {
+                        "id":3,
+                        "Name":"The Facebook",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617e1cf0f5940b54cdd/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617d16c851860783c41/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    },
+                    {
+                        "id":4,
+                        "Name":"The Google Guys",
+                        "Book_Img":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617e27ce8312e65c3e9/view?project=6615a1d9f0f9f6003b3c&mode=admin",
+                        "url":"https://cloud.appwrite.io/v1/storage/buckets/6617a56d3c91ae1eafb6/files/6617d2a3e44b4ad46477/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                    }
+
+
+                ]
+            }
+           
+        ]
+    }
+]
