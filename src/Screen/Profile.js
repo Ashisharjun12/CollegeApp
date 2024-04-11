@@ -28,6 +28,7 @@ const Profile = () => {
   const navigation = useNavigation();
 
   const [isVisible, setIsVisible] = useState(false);
+  const [docsOpen, setDocsOpen] = useState(false);
   const [userData, setUserData] = useState({});
 
   const {appwrite, setIsLoggedIn} = useContext(AppwriteContex);
@@ -107,7 +108,7 @@ const Profile = () => {
           style={{
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: responsiveHeight(7),
+            marginTop: responsiveHeight(5),
           }}>
           <View
             style={{
@@ -138,6 +139,16 @@ const Profile = () => {
           }}>
           Hey, {userData.name}
         </Text>
+        <Text
+          style={{
+            color: 'white',
+            alignSelf: 'center',
+            fontSize: responsiveFontSize(2.3),
+            fontWeight: '500',
+            marginTop: responsiveHeight(0.4),
+          }}>
+          {userData.email}
+        </Text>
       </View>
 
       {/* function */}
@@ -147,22 +158,25 @@ const Profile = () => {
             marginTop: responsiveHeight(4),
             marginLeft: responsiveWidth(6),
           }}>
-          <View
+          <TouchableOpacity
+            onPress={() => {
+              setDocsOpen(true);
+            }}
             style={{
               flexDirection: 'row',
               alignItems: 'center',
               gap: responsiveWidth(7),
             }}>
-            <Ionicons name="mail-outline" color={'black'} size={38} />
+            <Ionicons name="documents-outline" color={'black'} size={37} />
             <Text
               style={{
                 fontSize: responsiveFontSize(2.2),
                 color: 'black',
                 fontWeight: '500',
               }}>
-              {userData.email}
+              Your Documents
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <View
           style={{
@@ -472,6 +486,47 @@ const Profile = () => {
                 </Text>
               </TouchableOpacity>
             </View>
+          </View>
+        </View>
+      </Modal>
+
+      {/* documents modal */}
+      <Modal
+        style={{justifyContent: 'flex-end', margin: 0}}
+        animationIn={'slideInUp'}
+        isVisible={docsOpen}
+        onBackdropPress={() => {
+          setDocsOpen(false);
+        }}>
+        <View
+          style={{
+            width: responsiveWidth(100),
+            backgroundColor: '#ECEDF2',
+            height: responsiveHeight(35),
+            borderTopLeftRadius: 19,
+            borderTopRightRadius: 19,
+          }}>
+          <Text
+            style={{
+              fontSize: responsiveFontSize(3.2),
+              color: 'black',
+              fontWeight: '500',
+              alignSelf: 'center',
+              marginTop: responsiveHeight(2.4),
+            }}>
+            Documents{' '}
+          </Text>
+
+          <View style={{marginTop:responsiveHeight(4),gap:responsiveWidth(2.5)}}>
+            <TouchableOpacity>
+            <Button name={'Upload Docs'}/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Button name={'View Docs'}/>
+            </TouchableOpacity>
+            
+
+            
           </View>
         </View>
       </Modal>
