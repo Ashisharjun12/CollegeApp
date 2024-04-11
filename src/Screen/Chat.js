@@ -1,90 +1,66 @@
-
-import React, { useEffect, useState } from 'react';
-import { SafeAreaView, StyleSheet, ActivityIndicator,TouchableOpacity,View } from 'react-native';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import { ActivityIndicator, View } from 'react-native';
 import { GiftedChat } from 'react-native-gifted-chat';
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
-import GoBack from '../Common/GoBack';
+import axios from 'react-native-axios';
 
-const Chat = ({navigation}) => {
+const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [retryCount, setRetryCount] = useState(0);
-  const [isBotTyping, setIsBotTyping] = useState(false);
+  const [textinput, setTextinput] = useState('');
 
   useEffect(() => {
-    handleInitialMessage();
-  }, []);
-
-  const handleInitialMessage = () => {
     setMessages([
       {
         _id: 1,
-        text: 'Hey, How can I help You ?',
+        text: 'Hey! How can I help you?',
         createdAt: new Date(),
         user: {
           _id: 2,
-          name: 'Bot',
-          avatar:require('../Image/bot.png')
+          name: 'Chatbot',
         },
       },
     ]);
-  };
+  }, []);
 
-  const handleSend = async (newMessages = []) => {
-    const userMessage = newMessages[0].text;
-    const newMessage = {
-      _id: Math.random().toString(36).substring(7),
-      text: userMessage,
-      createdAt: new Date(),
-      user: {
-        _id: 1,
-      },
-    };
-    setMessages(previousMessages => GiftedChat.append(previousMessages, [newMessage]));
+  const handleSend = async () => {
+    if (textinput.trim() === '') {
+      return;
+    }
 
     setLoading(true);
 
     try {
-      setIsBotTyping(true);
-
       const response = await axios.post(
-        "https://api.openai.com/v1/chat/completions",
+        'https://api.openai.com/v1/chat/completions',
         {
-          messages: [{ role: "user", content: userMessage }],
-          model: "gpt-3.5-turbo",
+          messages: [{ role: 'user', content: textinput }],
+          model: 'gpt-3.5-turbo',
         },
         {
           headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer api key",
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer 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',
           },
         }
       );
 
-      const botMessage = response.data.choices[0]?.message?.content || 'No response text.';
-      const botReply = {
+      const generatedText = response.data.choices[0]?.message?.content || 'No response text.';
+      setTextinput('');
+      setMessages(previousMessages => GiftedChat.append(previousMessages, [{
         _id: Math.random().toString(36).substring(7),
-        text: botMessage,
+        text: generatedText,
         createdAt: new Date(),
         user: {
           _id: 2,
-          name: 'Bot',
-          avatar:require('../Image/bot.png')
+          name: 'Chatbot',
         },
-      };
-      setMessages(previousMessages => GiftedChat.append(previousMessages, [botReply]));
-
-      setIsBotTyping(false);
+      }]));
     } catch (error) {
       if (error.response && error.response.status === 429) {
-       
-        const delay = Math.pow(2, retryCount) * 1000; 
+        // Retry after waiting for some time
         setTimeout(() => {
-          setRetryCount(retryCount + 1);
-          handleSend(newMessages); 
-        }, delay);
+          handleSend(); // Retry the request
+        }, 5000); // Wait for 5 seconds before retrying
       } else {
         console.error('Error sending message:', error);
       }
@@ -94,29 +70,21 @@ const Chat = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-<GoBack/>
-        
+    <View style={{ flex: 1 }}>
       <GiftedChat
         messages={messages}
-        onSend={newMessages => handleSend(newMessages)}
+        onSend={handleSend}
         user={{
           _id: 1,
         }}
+        placeholder='Type your message...'
+        text={textinput}
+        onInputTextChanged={setTextinput}
+        alwaysShowSend={true}
         renderLoading={() => <ActivityIndicator size="large" color="black" />}
-        renderAvatarOnTop
-        showUserAvatar
-        isTyping={isBotTyping}
       />
-    </SafeAreaView>
+    </View>
   );
-}
+};
 
 export default Chat;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor:'#ECEDF2'
-  }
-});

@@ -379,36 +379,101 @@ const Profile = () => {
         <View
           style={{
             width: responsiveWidth(100),
-            backgroundColor: 'white',
+            backgroundColor: '#ECEDF2',
             height: responsiveHeight(35),
             borderTopLeftRadius: 19,
             borderTopRightRadius: 19,
           }}>
+          <View>
+            <Text
+              style={{
+                fontSize: responsiveFontSize(2.8),
+                alignSelf: 'center',
+                marginTop: responsiveHeight(2.2),
+                color: 'black',
+                fontWeight: '500',
+              }}>
+              Follow Us
+            </Text>
 
-            <View>
-              <Text style={{fontSize:responsiveFontSize(2.8),alignSelf:'center',marginTop:responsiveHeight(2.2),color:'black',fontWeight:'500'}}>Follow Us</Text>
-
-
-            <View style={{marginLeft:responsiveWidth(5),flexDirection:'row',gap:responsiveWidth(12),marginTop:responsiveHeight(3)}}>
-            <TouchableOpacity   onPress={()=>{Linking.openURL('https://www.instagram.com/_ashish.raj_10/')}}
-             style={{justifyContent:'center',alignItems:'center'}}>
-                <Image style={{resizeMode:'contain' ,width:responsiveWidth(14),height:responsiveHeight(12)}} source={require('../Image/instagram.png')}/>
-                <Text style={{color:'black',fontSize:responsiveFontSize(2.5),fontWeight:'500'}}>Instagram</Text>
+            <View
+              style={{
+                marginLeft: responsiveWidth(5),
+                flexDirection: 'row',
+                gap: responsiveWidth(12),
+                marginTop: responsiveHeight(3),
+              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL('https://www.instagram.com/_ashish.raj_10/');
+                }}
+                style={{justifyContent: 'center', alignItems: 'center'}}>
+                <Image
+                  style={{
+                    resizeMode: 'contain',
+                    width: responsiveWidth(14),
+                    height: responsiveHeight(12),
+                  }}
+                  source={require('../Image/instagram.png')}
+                />
+                <Text
+                  style={{
+                    color: 'black',
+                    fontSize: responsiveFontSize(2.5),
+                    fontWeight: '500',
+                  }}>
+                  Instagram
+                </Text>
               </TouchableOpacity>
-            <TouchableOpacity onPress={()=>{Linking.openURL('https://www.linkedin.com/in/ashish-raj-300943188/')}}
-             style={{justifyContent:'center',alignItems:'center'}}>
-                <Image style={{resizeMode:'contain' ,width:responsiveWidth(14),height:responsiveHeight(12)}} source={require('../Image/linkedin.png')}/>
-                <Text style={{color:'black',fontSize:responsiveFontSize(2.5),fontWeight:'500'}}>Linkedin</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL(
+                    'https://www.linkedin.com/in/ashish-raj-300943188/',
+                  );
+                }}
+                style={{justifyContent: 'center', alignItems: 'center'}}>
+                <Image
+                  style={{
+                    resizeMode: 'contain',
+                    width: responsiveWidth(14),
+                    height: responsiveHeight(12),
+                  }}
+                  source={require('../Image/linkedin.png')}
+                />
+                <Text
+                  style={{
+                    color: 'black',
+                    fontSize: responsiveFontSize(2.5),
+                    fontWeight: '500',
+                  }}>
+                  Linkedin
+                </Text>
               </TouchableOpacity>
-            <TouchableOpacity onPress={()=>{Linking.openURL('https://github.com/Ashisharjun12')}}
-             style={{justifyContent:'center',alignItems:'center'}}>
-                <Image style={{resizeMode:'contain' ,width:responsiveWidth(14),height:responsiveHeight(12)}} source={require('../Image/github.png')}/>
-                <Text style={{color:'black',fontSize:responsiveFontSize(2.5),fontWeight:'500'}}>Github</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL('https://github.com/Ashisharjun12');
+                }}
+                style={{justifyContent: 'center', alignItems: 'center'}}>
+                <Image
+                  style={{
+                    resizeMode: 'contain',
+                    width: responsiveWidth(14),
+                    height: responsiveHeight(12),
+                  }}
+                  source={require('../Image/github.png')}
+                />
+                <Text
+                  style={{
+                    color: 'black',
+                    fontSize: responsiveFontSize(2.5),
+                    fontWeight: '500',
+                  }}>
+                  Github
+                </Text>
               </TouchableOpacity>
-            </View>
-             
             </View>
           </View>
+        </View>
       </Modal>
     </View>
   );

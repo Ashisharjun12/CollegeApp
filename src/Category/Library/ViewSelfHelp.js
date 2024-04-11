@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { StyleSheet, Dimensions, View, Button, Text } from 'react-native';
+import { StyleSheet, Dimensions, View,  Text, TouchableOpacity } from 'react-native';
 import Pdf from 'react-native-pdf';
 import RNFetchBlob from 'rn-fetch-blob';
+import Download from '../../Common/Download';
 
 const ViewSelfHelp = ({ route }) => {
   const { url ,name} = route.params;
@@ -54,7 +55,11 @@ const ViewSelfHelp = ({ route }) => {
         }}
         style={styles.pdf}
       />
-      <Button title="Download PDF" onPress={handleDownload} />
+      <TouchableOpacity onPress={handleDownload}>
+      <Download/>
+      </TouchableOpacity>
+      
+      
       {loadingProgress > 0 && (
         <View style={styles.progressContainer}>
           <Text>Loading: {loadingProgress.toFixed(2)}%</Text>
