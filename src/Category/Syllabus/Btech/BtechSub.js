@@ -14,10 +14,6 @@ const BtechSub = () => {
  
   const navigation = useNavigation();
 
-
- 
-  
-
   return (
     <View>
       <GoBack style={{marginLeft:responsiveWidth(7)}}/>

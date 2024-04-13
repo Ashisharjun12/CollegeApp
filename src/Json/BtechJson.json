@@ -21,6 +21,27 @@
           }
         
         ]
+      },
+      {
+        "id": 2,
+        "Branch": "Internet of\nThings",
+        "Branch_Img": "https://cloud.appwrite.io/v1/storage/buckets/6610303ea8ffe91e5556/files/6612dd273d6eee7ccd46/view?project=66102c89be5d96a555ad&mode=admin",
+        "Semester": [
+          {
+            "id": 1,
+            "sem": "Semester - 1",
+            "sem_img": "",
+            "subjects": [
+              {
+                "id": 1,
+                "Subject_Name":"Chemistry",
+                "Subject_Img":"https://cloud.appwrite.io/v1/storage/buckets/6612f583f3e11901fa09/files/6612f66a45aa59f42820/view?project=66102c89be5d96a555ad&mode=admin",
+                "Pdf_url":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+              }
+            ]
+          }
+        
+        ]
       }
     
     ]

@@ -17,13 +17,18 @@
                                 "Year":[
                                     {   
                                         "id":1,
-                                        "Yr":2019,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2020,
+                                        "Pyq":"updating soon..."
                                     },
                                     {
                                         "id":2,
-                                        "Yr":2020,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2021,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5a20e9469e561eec/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                    },
+                                    {
+                                        "id":3,
+                                        "Yr":2022,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5a62b882ce2d6987/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     }
                                 ]
                             },
@@ -34,13 +39,18 @@
                                 "Year":[
                                     {   
                                         "id":1,
-                                        "Yr":2019,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2020,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5939e33ca4d0eca1/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     },
                                     {
                                         "id":2,
-                                        "Yr":2020,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2021,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a588cd9d69836cc77/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                    },
+                                    {
+                                        "id":3,
+                                        "Yr":2022,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a597a87e0f8b0e3a2/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     }
                                 ]
                             },
@@ -51,13 +61,18 @@
                                 "Year":[
                                     {   
                                         "id":1,
-                                        "Yr":2019,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2020,
+                                        "Pyq":"updating soon..."
                                     },
                                     {
                                         "id":2,
-                                        "Yr":2020,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2021,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5aeb4e4ee4733646/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                    },
+                                    {
+                                        "id":3,
+                                        "Yr":2022,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5b1e7cf4212bc021/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     }
                                 ]
                             },
@@ -68,13 +83,18 @@
                                 "Year":[
                                     {   
                                         "id":1,
-                                        "Yr":2019,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2020,
+                                        "Pyq":"updating soon..."
                                     },
                                     {
                                         "id":2,
-                                        "Yr":2020,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2021,
+                                        "Pyq":"updating soon...."
+                                    },
+                                    {
+                                        "id":3,
+                                        "Yr":2022,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5c7ebde388904813/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     }
                                 ]
                             },
@@ -85,12 +105,17 @@
                                 "Year":[
                                     {   
                                         "id":1,
-                                        "Yr":2019,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2020,
+                                        "Pyq":"updating soon..."
                                     },
                                     {
                                         "id":2,
-                                        "Yr":2020,
+                                        "Yr":2021,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5cfbf3f32351bc35/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                    },
+                                    {
+                                        "id":3,
+                                        "Yr":2022,
                                         "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     }
                                 ]
@@ -109,7 +134,7 @@
                                     {   
                                         "id":1,
                                         "Yr":2019,
-                                        "Pyq":""
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a503b3ac7fc830201/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     },
                                     {
                                         "id":2,
@@ -567,13 +592,18 @@
                                 "Year":[
                                     {   
                                         "id":1,
-                                        "Yr":2019,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2020,
+                                        "Pyq":"updating soon..."
                                     },
                                     {
                                         "id":2,
-                                        "Yr":2020,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2021,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5a20e9469e561eec/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                    },
+                                    {
+                                        "id":3,
+                                        "Yr":2022,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5a62b882ce2d6987/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     }
                                 ]
                             },
@@ -584,13 +614,18 @@
                                 "Year":[
                                     {   
                                         "id":1,
-                                        "Yr":2019,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2020,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5939e33ca4d0eca1/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     },
                                     {
                                         "id":2,
-                                        "Yr":2020,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2021,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a588cd9d69836cc77/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                    },
+                                    {
+                                        "id":3,
+                                        "Yr":2022,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a597a87e0f8b0e3a2/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     }
                                 ]
                             },
@@ -601,13 +636,18 @@
                                 "Year":[
                                     {   
                                         "id":1,
-                                        "Yr":2019,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2020,
+                                        "Pyq":"updating soon..."
                                     },
                                     {
                                         "id":2,
-                                        "Yr":2020,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2021,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5aeb4e4ee4733646/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                    },
+                                    {
+                                        "id":3,
+                                        "Yr":2022,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5b1e7cf4212bc021/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     }
                                 ]
                             },
@@ -618,13 +658,18 @@
                                 "Year":[
                                     {   
                                         "id":1,
-                                        "Yr":2019,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2020,
+                                        "Pyq":"updating soon..."
                                     },
                                     {
                                         "id":2,
-                                        "Yr":2020,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2021,
+                                        "Pyq":"updating soon...."
+                                    },
+                                    {
+                                        "id":3,
+                                        "Yr":2022,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5c7ebde388904813/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     }
                                 ]
                             },
@@ -635,12 +680,17 @@
                                 "Year":[
                                     {   
                                         "id":1,
-                                        "Yr":2019,
-                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                        "Yr":2020,
+                                        "Pyq":"updating soon..."
                                     },
                                     {
                                         "id":2,
-                                        "Yr":2020,
+                                        "Yr":2021,
+                                        "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/661a5cfbf3f32351bc35/view?project=6615a1d9f0f9f6003b3c&mode=admin"
+                                    },
+                                    {
+                                        "id":3,
+                                        "Yr":2022,
                                         "Pyq":"https://cloud.appwrite.io/v1/storage/buckets/6616cbc91da5ed7dbcf3/files/6616cc3d8d6eeff8c856/view?project=6615a1d9f0f9f6003b3c&mode=admin"
                                     }
                                 ]

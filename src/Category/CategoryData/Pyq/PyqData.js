@@ -12,6 +12,8 @@ import GoBack from '../../../Common/GoBack';
 const PyqData = () => {
   const navigation = useNavigation();
 
+  // console.log(pyq[0].Branch)
+
   return (
     <ScrollView>
     <View>
@@ -32,7 +34,7 @@ const PyqData = () => {
           return (
             <TouchableOpacity
               key={branch.id}
-              onPress={() => navigation.navigate('PyqData_Sem')}
+              onPress={() => navigation.navigate('PyqData_Sem',{branchId: branch.id})}
               style={{
                 marginBottom:responsiveHeight(2.5),
                 width: responsiveWidth(93),

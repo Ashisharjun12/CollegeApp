@@ -5,14 +5,16 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute} from '@react-navigation/native';
 import pyq from '../../../Json/Pyq.json';
 import GoBack from '../../../Common/GoBack';
 
 const PyqData_year = () => {
+  const route = useRoute()
   const navigation = useNavigation();
-  console.log()
- 
+   const {subject} = route.params
+   
+   console.log(subject.Year)
 
   return (
     <View>
@@ -31,7 +33,7 @@ const PyqData_year = () => {
           </Text>
         </View>
       <View>
-        {pyq[0].Branch[0].Semester[0].Subject[0].Year.map(yr => {
+        {subject.Year.map(yr => {
           return (
             <TouchableOpacity  onPress={()=>navigation.navigate('ViewPyq', {url:yr.Pyq})}
               key={yr.id}

@@ -9,14 +9,12 @@ import {useNavigation} from '@react-navigation/native';
 import pyq from '../../../Json/Pyq.json';
 import GoBack from '../../../Common/GoBack';
 
-const PyqData_Sem = () => {
+const PyqData_Sem = ({route}) => {
   const navigation = useNavigation();
-  console.log( pyq[0].Branch[0].Semester.map((a)=>{
-    return(
-      <Text>{a.id}</Text>
-    )
-  }))
- 
+
+  const {branchId} = route.params //pyq[0].Branch[0]
+
+  const data = pyq[0].Branch.find(branch =>branch.id ===branchId)
 
   return (
     <ScrollView>
@@ -35,9 +33,9 @@ const PyqData_Sem = () => {
           </Text>
         </View>
       <View>
-        {pyq[0].Branch[0].Semester.map(semName => {
+        {data.Semester.map(semName => {
           return (
-            <TouchableOpacity onPress={()=>navigation.navigate('PyqData_sub',{semIndex:semName.id})}
+            <TouchableOpacity onPress={()=>navigation.navigate('PyqData_sub',{semIndex:semName.id ,branchId: branchId})}
               key={semName.id}
               
               style={{

@@ -11,12 +11,17 @@ import {
 import Feather from 'react-native-vector-icons/Feather';
 
 const PyqData_sub = ({ route }) => {
+
+
+  
   const navigation = useNavigation();
-  const { semIndex } = route.params;
+  const { semIndex ,branchId } = route.params;
   const [searchQuery, setSearchQuery] = useState('');
+
+ 
   
   // Filter subjects based on search query
-  const filteredSubjects = pyq[0].Branch[0].Semester.find(sem => sem.id === semIndex).Subject.filter(sub =>
+  const filteredSubjects = pyq[0].Branch.find(id =>id.id ===branchId).Semester.find(sem => sem.id === semIndex).Subject.filter(sub =>
     sub.Sub_Name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -70,7 +75,7 @@ const PyqData_sub = ({ route }) => {
         <View>
           {filteredSubjects.map(sub => (
             <TouchableOpacity
-              onPress={() => navigation.navigate('PyqData_year')}
+              onPress={() => navigation.navigate('PyqData_year',{subject :sub})}
               key={sub.id}
               style={{
                 marginBottom: responsiveHeight(2.5),
