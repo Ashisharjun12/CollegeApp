@@ -207,7 +207,7 @@ const handleSignUp = () =>{
                     alignSelf: 'center',
                   }}
                   placeholderTextColor={"black"}
-                  placeholder="college21@gmail.com"
+                  placeholder="mail@gmail.com"
                   value={email}
                   onChangeText={txt =>Setemail(txt)}
                 />

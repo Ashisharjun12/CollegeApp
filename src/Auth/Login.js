@@ -39,11 +39,14 @@ const Login = () => {
 
      appwrite.login(user)
         .then((response)=>{
-          setIsLoggedIn(true)
-          Snackbar.show({
-            text:'Login SuccessFully!',
-            duration:Snackbar.LENGTH_SHORT
-          })
+          if (response) {
+            setIsLoggedIn(true)
+            Snackbar.show({
+              text:'Login SuccessFully!',
+              duration:Snackbar.LENGTH_SHORT
+            })
+          }
+         
 
         })
         .catch(e => {
