@@ -81,6 +81,7 @@ const Event = () => {
                     fontSize: responsiveFontSize(2.3),
                     color: 'black',
                   }}
+                  placeholderTextColor={"black"}
                   placeholder="College Name..."
                 />
               </View>
@@ -128,6 +129,7 @@ const Event = () => {
                     fontSize: responsiveFontSize(2.3),
                     color: 'black',
                   }}
+                  placeholderTextColor={"black"}
                   placeholder="Write description..."
                 />
               </View>
@@ -223,7 +225,7 @@ const Event = () => {
               marginTop: responsiveHeight(30),
               fontWeight: '500',
             }}>
-            {'   This Feature is\nin UnderDevelopment🙂'}
+            {'  Coming Soon..'}
           </Text>
         </View>
 

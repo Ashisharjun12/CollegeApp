@@ -31,14 +31,14 @@ const Profile = () => {
   const [docsOpen, setDocsOpen] = useState(false);
   const [userData, setUserData] = useState({});
 
-  const {appwrite, setIsLoggedIn} = useContext(AppwriteContex);
+  const {selectImg,setSelectImg,appwrite, setIsLoggedIn} = useContext(AppwriteContex);
 
   const handleLogOut = () => {
     appwrite.logout().then(() => {
       setIsLoggedIn(false);
       Snackbar.show({
         text: 'LogOut SuccessFully!',
-        duration: Snackbar.LENGTH_SHORT,
+        duration: Snackbar.LENGTH_SHORT,        
       });
     });
   };
@@ -79,7 +79,7 @@ const Profile = () => {
 
   //select profile image
 
-  const [selectImg, setSelectImg] = useState();
+  // const [selectImg, setSelectImg] = useState();
   const selectDoc = async () => {
     try {
       const doc = await DocumentPicker.pick({
@@ -435,10 +435,10 @@ const Profile = () => {
                     color: 'black',
                     fontSize: responsiveFontSize(2.5),
                     fontWeight: '500',
-                  }}>
-                  Instagram
-                </Text>
-              </TouchableOpacity>
+                    }}>    
+                  Instagram      
+                </Text>    
+              </TouchableOpacity>     
               <TouchableOpacity
                 onPress={() => {
                   Linking.openURL(
@@ -446,7 +446,7 @@ const Profile = () => {
                   );
                 }}
                 style={{justifyContent: 'center', alignItems: 'center'}}>
-                <Image
+                <Image  
                   style={{
                     resizeMode: 'contain',
                     width: responsiveWidth(14),

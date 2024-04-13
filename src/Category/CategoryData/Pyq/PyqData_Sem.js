@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {
   responsiveFontSize,
@@ -11,9 +11,15 @@ import GoBack from '../../../Common/GoBack';
 
 const PyqData_Sem = () => {
   const navigation = useNavigation();
+  console.log( pyq[0].Branch[0].Semester.map((a)=>{
+    return(
+      <Text>{a.id}</Text>
+    )
+  }))
  
 
   return (
+    <ScrollView>
     <View>
         <GoBack/>
 
@@ -31,7 +37,7 @@ const PyqData_Sem = () => {
       <View>
         {pyq[0].Branch[0].Semester.map(semName => {
           return (
-            <TouchableOpacity onPress={()=>navigation.navigate('PyqData_sub')}
+            <TouchableOpacity onPress={()=>navigation.navigate('PyqData_sub',{semIndex:semName.id})}
               key={semName.id}
               
               style={{
@@ -72,6 +78,7 @@ const PyqData_Sem = () => {
         })}
       </View>
     </View>
+    </ScrollView>
   );
 };
 

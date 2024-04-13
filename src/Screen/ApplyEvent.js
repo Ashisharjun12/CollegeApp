@@ -18,7 +18,7 @@ const ApplyEvent = () => {
           marginTop: responsiveHeight(40),
           fontWeight:'bold'
         }}>
-        {'   This Feature is\nin UnderDevelopment🙂'}
+        {'Coming Soon...'}
       </Text>
     </View>
   );

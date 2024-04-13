@@ -10,9 +10,12 @@ import BtechJson from '../../../Json/BtechJson.json';
 import GoBack from '../../../Common/GoBack';
 
 const BtechSub = () => {
+
+ 
   const navigation = useNavigation();
 
-  console.log(BtechJson[0].Branch[0].Semester[0].subjects)
+
+ 
   
 
   return (

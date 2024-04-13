@@ -29,7 +29,7 @@ const Home = () => {
 
   const [userData ,setUserData] = useState({})
 
-  const {appwrite } = useContext(AppwriteContex)
+  const {appwrite,selectImg,setSelectImg } = useContext(AppwriteContex)
 
 
   const dataFetch = async()=>{
@@ -72,7 +72,7 @@ useEffect(()=>{
               <View style={{backgroundColor:'#FB6D48',padding:2.8 ,borderRadius:99}}>
             <Image
               style={{width: responsiveWidth(18), height: responsiveHeight(8.3),borderRadius:99}}
-              source={require('../Image/avtar.png')}
+              source={selectImg ? {uri: selectImg} : require('../Image/avtar.png')}
             />
             </View>
           </View>
@@ -121,9 +121,11 @@ useEffect(()=>{
               flex: 1,
               marginLeft: responsiveWidth(4),
               fontSize: responsiveFontSize(2.3),
-              color: 'black'
+              color: 'black',
+              
             }}
-            placeholder="Search AnyThing"
+            placeholderTextColor={"black"}
+            placeholder="Search Categories..."
           />
 
           <Feather name="search" color="#535353" size={30} />

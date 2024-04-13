@@ -12,6 +12,7 @@ import GoBack from '../../../Common/GoBack';
 const BtechSem = () => {
   const navigation = useNavigation();
   
+  
 
   return (
     <View>

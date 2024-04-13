@@ -11,6 +11,7 @@ import GoBack from '../../../Common/GoBack';
 
 const PyqData_year = () => {
   const navigation = useNavigation();
+  console.log()
  
 
   return (

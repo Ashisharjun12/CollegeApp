@@ -119,10 +119,12 @@ const handleSignUp = () =>{
 
                 <TextInput
                   style={{
+                    color:'black',
                     fontSize: responsiveFontSize(2.3),
                     textAlign: 'left',
                     alignSelf: 'center',
                   }}
+                  placeholderTextColor={"black"}
                   placeholder="First Name"
                   value={firstName}
                   onChangeText={txt =>SetfirstName(txt)}
@@ -159,10 +161,12 @@ const handleSignUp = () =>{
 
                 <TextInput
                   style={{
+                    color:'black',
                     fontSize: responsiveFontSize(2.3),
                     textAlign: 'left',
                     alignSelf: 'center',
                   }}
+                  placeholderTextColor={"black"}
                   placeholder="Last Name"
                 />
               </View>
@@ -197,10 +201,12 @@ const handleSignUp = () =>{
 
                 <TextInput
                   style={{
+                    color:'black',
                     fontSize: responsiveFontSize(2.3),
                     textAlign: 'left',
                     alignSelf: 'center',
                   }}
+                  placeholderTextColor={"black"}
                   placeholder="college21@gmail.com"
                   value={email}
                   onChangeText={txt =>Setemail(txt)}
@@ -236,10 +242,12 @@ const handleSignUp = () =>{
 
                 <TextInput
                   style={{
+                    color:'black',
                     fontSize: responsiveFontSize(2.3),
                     textAlign: 'left',
                     alignSelf: 'center',
                   }}
+                  placeholderTextColor={"black"}
                   placeholder="Password"
                   value={password}
                   onChangeText={txt =>Setpassword(txt)}

@@ -119,10 +119,12 @@ const Login = () => {
                 <Octicons name="mail" color="#535353" size={21} />
                 <TextInput
                   style={{
+                    color:'black',
                     flex: 1,
                     marginLeft: responsiveWidth(4),
                     fontSize: responsiveFontSize(2.3),
                   }}
+                  placeholderTextColor={"black"}
                   placeholder="johndoe@gmail.com"
                   value={email}
                   onChangeText={txt =>setEmail(txt)}
@@ -155,10 +157,12 @@ const Login = () => {
                 <Octicons name="lock" color="#535353" size={21} />
                 <TextInput
                   style={{
+                    color:'black',
                     flex: 1,
                     marginLeft: responsiveWidth(4),
                     fontSize: responsiveFontSize(2.3),
                   }}
+                  placeholderTextColor={"black"}
                   placeholder="password"
                   value={password}
                   onChangeText={txt =>setPassword(txt)}

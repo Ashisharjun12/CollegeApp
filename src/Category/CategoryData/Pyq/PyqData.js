@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {
   responsiveFontSize,
@@ -13,6 +13,7 @@ const PyqData = () => {
   const navigation = useNavigation();
 
   return (
+    <ScrollView>
     <View>
       <GoBack style={{marginLeft:responsiveWidth(7)}}/>
       <View style={{marginBottom: responsiveHeight(3)}}>
@@ -70,6 +71,7 @@ const PyqData = () => {
         })}
       </View>
     </View>
+    </ScrollView>
   );
 };
 

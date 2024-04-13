@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+
 import React, { useState ,createContext} from 'react'
 
 import Appwrite from './Service'
@@ -7,17 +7,34 @@ import Appwrite from './Service'
 
 export const  AppwriteContex = createContext({
     appwrite : new Appwrite(),
-    isLoggedIn:false,
-    setIsLoggedIn :() =>{}
+    isLoggedIn:true,
+    
+    setIsLoggedIn :() =>{},
+    selectImg:'',
+    setSelectImg:()=>{}
+
+    
+
+})
+
+
+
+
+
+export const profileProvider = createContext({
+  
 
 })
 
 export const AppwriteProvider  = ({children}) => {
 const [isLoggedIn ,setIsLoggedIn]=useState(false)
+const [selectImg, setSelectImg] = useState('');
 const defalutValue = {
     appwrite : new Appwrite(),
     isLoggedIn,
-    setIsLoggedIn 
+    setIsLoggedIn,
+    selectImg,
+    setSelectImg 
 }
 
   return (

@@ -74,6 +74,7 @@ const UniversityData = () => {
               fontSize: responsiveFontSize(2.3),
               color: 'black'
             }}
+            placeholderTextColor={"black"}
             placeholder="Search College..."
             value={searchQuery}
             onChangeText={handleSearch}

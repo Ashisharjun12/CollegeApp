@@ -15,12 +15,12 @@ const Notification = () => {
       <Text
         style={{
           fontSize: responsiveFontSize(2.8),
-          fontWeight: 'bold',
+        
           color: 'black',
           alignSelf: 'center',
         }}>
         {' '}
-        No Notifications 😒
+        No Notifications
       </Text>
     </View>
     </View>
