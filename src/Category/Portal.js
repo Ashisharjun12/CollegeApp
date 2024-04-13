@@ -81,7 +81,7 @@ const Portal = () => {
           name={'PMS Online'}
           navigation={navigation}
           screen={'Pms'}
-          image={require('../Image/result.png')}
+          image={require('../Image/schlor.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
             gap: responsiveWidth(11),
@@ -93,7 +93,7 @@ const Portal = () => {
           name={'Schlorship'}
           navigation={navigation}
           screen={'Schlorship'}
-          image={require('../Image/result.png')}
+          image={require('../Image/schlor.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
             gap: responsiveWidth(11),
@@ -105,7 +105,7 @@ const Portal = () => {
           name={'Spoken Tutorial'}
           navigation={navigation}
           screen={'Spoken'}
-          image={require('../Image/result.png')}
+          image={require('../Image/spoken.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
             gap: responsiveWidth(11),
@@ -117,7 +117,7 @@ const Portal = () => {
           name={'National Digital Library'}
           navigation={navigation}
           screen={'NatLibrary'}
-          image={require('../Image/result.png')}
+          image={require('../Image/books.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
             gap: responsiveWidth(2),

@@ -68,8 +68,8 @@ const Syllabus = () => {
         <Card
           name={'ESE / IES Exam'}
           navigation={navigation}
-          screen={'Holiday'}
-          image={require('../Image/holiday.png')}
+          screen={'Ies'}
+          image={require('../Image/ies.png')}
           cardStyle={{
             marginBottom: responsiveHeight(3),
             

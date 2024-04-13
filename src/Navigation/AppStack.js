@@ -38,6 +38,7 @@ import SelfHelp from '../Category/Library/SelfHelp';
 import ViewSelfHelp from '../Category/Library/ViewSelfHelp';
 import FamousBook from '../Category/Library/FamousBook';
 import Biography from '../Category/Library/Biography';
+import Ies from '../Category/Syllabus/IES/Ies';
 
 
 
@@ -363,6 +364,18 @@ const AppStack = () => {
 
 
       {/* Library end */}
+
+
+      {/* exam syllabus */}
+      <Stack.Screen
+        name="Ies"
+        component={Ies}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      {/* exam syllabus end */}
 
 
     

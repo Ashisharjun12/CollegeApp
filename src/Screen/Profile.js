@@ -29,6 +29,7 @@ const Profile = () => {
 
   const [isVisible, setIsVisible] = useState(false);
   const [docsOpen, setDocsOpen] = useState(false);
+  const [join ,setJoin] =useState(false)
   const [userData, setUserData] = useState({});
 
   const {selectImg,setSelectImg,appwrite, setIsLoggedIn} = useContext(AppwriteContex);
@@ -190,7 +191,7 @@ const Profile = () => {
 
       <View>
         <TouchableOpacity
-          onPress={() => navigation.navigate('ApplyEvent')}
+          onPress={() => {setJoin(true)}}
           style={{
             marginTop: responsiveHeight(2),
             marginLeft: responsiveWidth(6),
@@ -208,7 +209,7 @@ const Profile = () => {
                 color: 'black',
                 fontWeight: '500',
               }}>
-              Your Events
+              Join Community
             </Text>
           </View>
         </TouchableOpacity>
@@ -527,6 +528,192 @@ const Profile = () => {
             
 
             
+          </View>
+        </View>
+      </Modal>
+
+      {/* commiunity Join */}
+      <Modal
+        style={{justifyContent: 'flex-end', margin: 0}}
+        animationIn={'slideInUp'}
+        isVisible={join}
+        onBackdropPress={() => {
+          setJoin(false);
+        }}>
+        <View
+          style={{
+            width: responsiveWidth(100),
+            backgroundColor: '#ECEDF2',
+            height: responsiveHeight(35),
+            borderTopLeftRadius: 19,
+            borderTopRightRadius: 19,
+          }}>
+          <View>
+            <Text
+              style={{
+                fontSize: responsiveFontSize(2.8),
+                alignSelf: 'center',
+                marginTop: responsiveHeight(2.2),
+                color: 'black',
+                fontWeight: '500',
+              }}>
+              Join Now
+            </Text>
+
+            <View
+              style={{
+               
+                flexDirection: 'row',
+                justifyContent:'center',
+                gap: responsiveWidth(12),
+                marginTop: responsiveHeight(1.2),
+              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL('https://whatsapp.com/channel/0029VaVbDry2ZjCqAkQwlm1d');
+                }}
+                style={{justifyContent: 'center', alignItems: 'center'}}>
+                <Image
+                  style={{
+                    resizeMode: 'contain',
+                    width: responsiveWidth(12),
+                    height: responsiveHeight(9),
+                  }}
+                  source={require('../Image/whatsapp.png')}
+                />
+                <Text
+                  style={{
+                    color: 'black',
+                    fontSize: responsiveFontSize(2.2),
+                    fontWeight: '500',
+                    }}>    
+                  Whatsapp    
+                </Text>    
+              </TouchableOpacity>     
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL(
+                    '#',
+                  );
+                }}
+                style={{justifyContent: 'center', alignItems: 'center'}}>
+                <Image  
+                  style={{
+                    resizeMode: 'contain',
+                    width: responsiveWidth(12),
+                    height: responsiveHeight(9),
+                  }}
+                  source={require('../Image/telegram.png')}
+                />
+                <Text
+                  style={{
+                    color: 'black',
+                    fontSize: responsiveFontSize(2.2),
+                    fontWeight: '500',
+                  }}>
+                  Telegram
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL('#');
+                }}
+                style={{justifyContent: 'center', alignItems: 'center'}}>
+                <Image
+                  style={{
+                    resizeMode: 'contain',
+                    width: responsiveWidth(12),
+                    height: responsiveHeight(9),
+                  }}
+                  source={require('../Image/instagram.png')}
+                />
+                <Text
+                  style={{
+                    color: 'black',
+                    fontSize: responsiveFontSize(2.2),
+                    fontWeight: '500',
+                  }}>
+                  Instagram
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View
+              style={{
+               
+                flexDirection: 'row',
+                justifyContent:'center',
+                gap: responsiveWidth(12),
+                marginTop: responsiveHeight(1.2),
+              }}>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL('#');
+                }}
+                style={{justifyContent: 'center', alignItems: 'center'}}>
+                <Image
+                  style={{
+                    resizeMode: 'contain',
+                    width: responsiveWidth(12),
+                    height: responsiveHeight(9),
+                  }}
+                  source={require('../Image/linkedin.png')}
+                />
+                <Text
+                  style={{
+                    color: 'black',
+                    fontSize: responsiveFontSize(2.2),
+                    fontWeight: '500',
+                    }}>    
+                  Linkedin 
+                </Text>    
+              </TouchableOpacity>     
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL(
+                    '#',
+                  );
+                }}
+                style={{justifyContent: 'center', alignItems: 'center'}}>
+                <Image  
+                  style={{
+                    resizeMode: 'contain',
+                    width: responsiveWidth(12),
+                    height: responsiveHeight(9),
+                  }}
+                  source={require('../Image/th.png')}
+                />
+                <Text
+                  style={{
+                    color: 'black',
+                    fontSize: responsiveFontSize(2.2),
+                    fontWeight: '500',
+                  }}>
+                  Threads
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => {
+                  Linking.openURL('#');
+                }}
+                style={{justifyContent: 'center', alignItems: 'center'}}>
+                <Image
+                  style={{
+                    resizeMode: 'contain',
+                    width: responsiveWidth(10),
+                    height: responsiveHeight(9),
+                  }}
+                  source={require('../Image/linktree.png')}
+                />
+                <Text
+                  style={{
+                    color: 'black',
+                    fontSize: responsiveFontSize(2.2),
+                    fontWeight: '500',
+                  }}>
+                  Linktree
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </Modal>
