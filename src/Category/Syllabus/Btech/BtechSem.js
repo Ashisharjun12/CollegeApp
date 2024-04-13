@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image,ScrollView} from 'react-native';
 import React from 'react';
 import {
   responsiveFontSize,
@@ -16,7 +16,7 @@ const BtechSem = ({route}) => {
   
 
   return (
-    <View>
+    <ScrollView>
       <GoBack style={{marginLeft:responsiveWidth(7)}}/>
       <View style={{marginBottom: responsiveHeight(3)}}>
           <Text
@@ -75,7 +75,7 @@ const BtechSem = ({route}) => {
          
      
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
