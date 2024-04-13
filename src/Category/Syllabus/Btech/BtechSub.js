@@ -9,10 +9,12 @@ import {useNavigation} from '@react-navigation/native';
 import BtechJson from '../../../Json/BtechJson.json';
 import GoBack from '../../../Common/GoBack';
 
-const BtechSub = () => {
+const BtechSub = ({route}) => {
 
  
   const navigation = useNavigation();
+
+  const {semId,branchId} =route.params
 
   return (
     <View>
@@ -30,7 +32,7 @@ const BtechSub = () => {
         </View>
       <View>
 
-      {BtechJson[0].Branch[0].Semester[0].subjects.map((subName)=>{
+      {BtechJson[0].Branch.find(id =>id.id ===branchId).Semester.find(id =>id.id===semId).subjects.map((subName)=>{
         return( 
             <TouchableOpacity
               key={subName.id}

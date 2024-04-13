@@ -33,7 +33,7 @@ const Btech = () => {
         return( 
             <TouchableOpacity
               key={branch.id}
-              onPress={() => navigation.navigate('BtechSem')}
+              onPress={() => navigation.navigate('BtechSem',{branchId:branch.id})}
               style={{
                 marginBottom:responsiveHeight(2.5),
                 width: responsiveWidth(93),
