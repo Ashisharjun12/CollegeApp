@@ -39,6 +39,7 @@ import ViewSelfHelp from '../Category/Library/ViewSelfHelp';
 import FamousBook from '../Category/Library/FamousBook';
 import Biography from '../Category/Library/Biography';
 import Ies from '../Category/Syllabus/IES/Ies';
+import ViewDocs from '../Screen/ViewDocs';
 
 
 
@@ -376,6 +377,17 @@ const AppStack = () => {
       />
 
       {/* exam syllabus end */}
+
+      {/* docs uplad and View */}
+      <Stack.Screen
+        name="ViewDocs"
+        component={ViewDocs}
+        options={{
+          headerShown: false,
+        }}
+      />
+
+      {/* docs upload and view end */}
 
 
     

@@ -15,6 +15,7 @@ import {
 import Modal from 'react-native-modal';
 import {useNavigation} from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Feather from 'react-native-vector-icons//Feather';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
@@ -29,17 +30,18 @@ const Profile = () => {
 
   const [isVisible, setIsVisible] = useState(false);
   const [docsOpen, setDocsOpen] = useState(false);
-  const [join ,setJoin] =useState(false)
+  const [join, setJoin] = useState(false);
   const [userData, setUserData] = useState({});
 
-  const {selectImg,setSelectImg,appwrite, setIsLoggedIn} = useContext(AppwriteContex);
+  const {selectImg, setSelectImg, appwrite, setIsLoggedIn} =
+    useContext(AppwriteContex);
 
   const handleLogOut = () => {
     appwrite.logout().then(() => {
       setIsLoggedIn(false);
       Snackbar.show({
         text: 'LogOut SuccessFully!',
-        duration: Snackbar.LENGTH_SHORT,        
+        duration: Snackbar.LENGTH_SHORT,
       });
     });
   };
@@ -104,8 +106,7 @@ const Profile = () => {
           borderBottomRightRadius: 14,
           borderBottomLeftRadius: 14,
         }}>
-        <TouchableOpacity
-          onPress={selectDoc}
+        <View
           style={{
             justifyContent: 'center',
             alignItems: 'center',
@@ -128,7 +129,22 @@ const Profile = () => {
               }
             />
           </View>
-        </TouchableOpacity>
+          <TouchableOpacity
+            onPress={selectDoc}
+            style={{
+              backgroundColor: '#FF9800',
+              width: responsiveWidth(11),
+              height: responsiveWidth(11),
+              borderRadius: 99,
+              position: 'absolute',
+              top: responsiveHeight(10.4),
+              left: responsiveWidth(58),
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Feather name="camera" color={'black'} size={24} />
+          </TouchableOpacity>
+        </View>
 
         <Text
           style={{
@@ -191,7 +207,9 @@ const Profile = () => {
 
       <View>
         <TouchableOpacity
-          onPress={() => {setJoin(true)}}
+          onPress={() => {
+            setJoin(true);
+          }}
           style={{
             marginTop: responsiveHeight(2),
             marginLeft: responsiveWidth(6),
@@ -436,10 +454,10 @@ const Profile = () => {
                     color: 'black',
                     fontSize: responsiveFontSize(2.5),
                     fontWeight: '500',
-                    }}>    
-                  Instagram      
-                </Text>    
-              </TouchableOpacity>     
+                  }}>
+                  Instagram
+                </Text>
+              </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
                   Linking.openURL(
@@ -447,7 +465,7 @@ const Profile = () => {
                   );
                 }}
                 style={{justifyContent: 'center', alignItems: 'center'}}>
-                <Image  
+                <Image
                   style={{
                     resizeMode: 'contain',
                     width: responsiveWidth(14),
@@ -518,16 +536,14 @@ const Profile = () => {
             Documents{' '}
           </Text>
 
-          <View style={{marginTop:responsiveHeight(4),gap:responsiveWidth(2.5)}}>
+          <View
+            style={{marginTop: responsiveHeight(4), gap: responsiveWidth(2.5)}}>
             <TouchableOpacity>
-            <Button name={'Upload Docs'}/>
+              <Button name={'Upload Docs'} />
             </TouchableOpacity>
-            <TouchableOpacity>
-            <Button name={'View Docs'}/>
+            <TouchableOpacity onPress={() => navigation.navigate('ViewDocs')}>
+              <Button name={'View Docs'} />
             </TouchableOpacity>
-            
-
-            
           </View>
         </View>
       </Modal>
@@ -562,15 +578,16 @@ const Profile = () => {
 
             <View
               style={{
-               
                 flexDirection: 'row',
-                justifyContent:'center',
+                justifyContent: 'center',
                 gap: responsiveWidth(12),
                 marginTop: responsiveHeight(1.2),
               }}>
               <TouchableOpacity
                 onPress={() => {
-                  Linking.openURL('https://whatsapp.com/channel/0029VaVbDry2ZjCqAkQwlm1d');
+                  Linking.openURL(
+                    'https://whatsapp.com/channel/0029VaVbDry2ZjCqAkQwlm1d',
+                  );
                 }}
                 style={{justifyContent: 'center', alignItems: 'center'}}>
                 <Image
@@ -586,18 +603,16 @@ const Profile = () => {
                     color: 'black',
                     fontSize: responsiveFontSize(2.2),
                     fontWeight: '500',
-                    }}>    
-                  Whatsapp    
-                </Text>    
-              </TouchableOpacity>     
+                  }}>
+                  Whatsapp
+                </Text>
+              </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  Linking.openURL(
-                    '#',
-                  );
+                  Linking.openURL('#');
                 }}
                 style={{justifyContent: 'center', alignItems: 'center'}}>
-                <Image  
+                <Image
                   style={{
                     resizeMode: 'contain',
                     width: responsiveWidth(12),
@@ -639,9 +654,8 @@ const Profile = () => {
             </View>
             <View
               style={{
-               
                 flexDirection: 'row',
-                justifyContent:'center',
+                justifyContent: 'center',
                 gap: responsiveWidth(12),
                 marginTop: responsiveHeight(1.2),
               }}>
@@ -663,18 +677,16 @@ const Profile = () => {
                     color: 'black',
                     fontSize: responsiveFontSize(2.2),
                     fontWeight: '500',
-                    }}>    
-                  Linkedin 
-                </Text>    
-              </TouchableOpacity>     
+                  }}>
+                  Linkedin
+                </Text>
+              </TouchableOpacity>
               <TouchableOpacity
                 onPress={() => {
-                  Linking.openURL(
-                    '#',
-                  );
+                  Linking.openURL('#');
                 }}
                 style={{justifyContent: 'center', alignItems: 'center'}}>
-                <Image  
+                <Image
                   style={{
                     resizeMode: 'contain',
                     width: responsiveWidth(12),
