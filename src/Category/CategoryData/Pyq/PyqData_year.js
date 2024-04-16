@@ -14,7 +14,7 @@ const PyqData_year = () => {
   const navigation = useNavigation();
    const {subject} = route.params
    
-   console.log(subject.Year)
+   console.log(subject)
 
   return (
     <View>

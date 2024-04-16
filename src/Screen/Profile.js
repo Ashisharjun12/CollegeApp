@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Linking,
   Alert,
+  ScrollView
 } from 'react-native';
 import React, {useContext, useState, useEffect} from 'react';
 import {
@@ -24,6 +25,7 @@ import Button from '../Common/Button';
 import Snackbar from 'react-native-snackbar';
 import {AppwriteContex} from '../Appwrite/AppwriteContex';
 import DocumentPicker from 'react-native-document-picker';
+import Pdf from 'react-native-pdf';
 
 const Profile = () => {
   const navigation = useNavigation();
@@ -88,14 +90,61 @@ const Profile = () => {
       const doc = await DocumentPicker.pick({
         type: [DocumentPicker.types.images],
       });
+      // console.log(doc)
       setSelectImg(doc[0].uri);
     } catch (error) {
       console.error(error);
     }
   };
 
+
+  //upload pdf functionlity 
+
+  //upload docs in appwrite  stroage
+
+  // const uploadDocs =()=>{
+
+  //   stroage.fileUpload().then(()=>{
+  //     uploadPdf()
+  //     console.log('file uploaded')
+  //   })
+   
+
+    
+
+  // }
+
+
+ 
+
+  const selectPdf = async() =>{
+
+    try {
+      const pdf = await DocumentPicker.pick({
+        type:[DocumentPicker.types.pdf]
+      })
+      const pdfUrl = pdf[0].uri
+     
+      setUploadPdf(pdfUrl)
+      
+       
+        navigation.navigate('ViewDocs')
+     
+      // SetUploadPdf(pdf)
+
+
+    } catch (error) {
+      console.error(error)
+      
+    }
+
+  }
+
+
+ 
+
   return (
-    <View>
+    <ScrollView>
       {/* profile */}
 
       <View
@@ -538,7 +587,7 @@ const Profile = () => {
 
           <View
             style={{marginTop: responsiveHeight(4), gap: responsiveWidth(2.5)}}>
-            <TouchableOpacity>
+            <TouchableOpacity  onPress={selectPdf}>
               <Button name={'Upload Docs'} />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => navigation.navigate('ViewDocs')}>
@@ -729,7 +778,7 @@ const Profile = () => {
           </View>
         </View>
       </Modal>
-    </View>
+    </ScrollView>
   );
 };
 

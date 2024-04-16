@@ -5,36 +5,34 @@ import Appwrite from './Service'
 
 
 
+
+
 export const  AppwriteContex = createContext({
     appwrite : new Appwrite(),
     isLoggedIn:true,
-    
     setIsLoggedIn :() =>{},
     selectImg:'',
-    setSelectImg:()=>{}
+    setSelectImg:()=>{},
+    uploadPdf:'',
+    setUploadPdf:()=>{}
 
-    
 
 })
 
 
 
-
-
-export const profileProvider = createContext({
-  
-
-})
 
 export const AppwriteProvider  = ({children}) => {
 const [isLoggedIn ,setIsLoggedIn]=useState(false)
 const [selectImg, setSelectImg] = useState('');
+
 const defalutValue = {
     appwrite : new Appwrite(),
     isLoggedIn,
     setIsLoggedIn,
     selectImg,
-    setSelectImg 
+    setSelectImg ,
+ 
 }
 
   return (

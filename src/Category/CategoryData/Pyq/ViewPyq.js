@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import { StyleSheet, Dimensions, View, Button, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Dimensions, View, Button, Text, TouchableOpacity, PermissionsAndroid } from 'react-native';
 import Pdf from 'react-native-pdf';
 import RNFetchBlob from 'rn-fetch-blob';
 import Download from '../../../Common/Download';
-import { responsiveHeight } from 'react-native-responsive-dimensions';
-
+import { responsiveFontSize, responsiveHeight } from 'react-native-responsive-dimensions';
 
 const ViewPyq = ({ route }) => {
   const { url } = route.params;
-  const [loadingProgress, setLoadingProgress] = useState(0); 
+  const [loadingProgress, setLoadingProgress] = useState(0);
 
   const handleDownload = async () => {
     const { config, fs } = RNFetchBlob;
@@ -34,10 +33,35 @@ const ViewPyq = ({ route }) => {
     }
   };
 
+  const requestStoragePermission = async () => {
+    try {
+      const granted = await PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
+        {
+          title: 'BeuOne App Storage Permission',
+          message:
+            'BeuOne App needs access to your storage ' +
+            'so you can download files.',
+          buttonNeutral: 'Ask Me Later',
+          buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
+        },
+      );
+      if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+        console.log('You can use the storage');
+        handleDownload();
+      } else {
+        console.log('Storage permission denied');
+      }
+    } catch (err) {
+      console.warn(err);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Pdf
-      trustAllCerts={false}
+        trustAllCerts={false}
         source={{ uri: url }}
         onLoadComplete={(numberOfPages, filePath) => {
           console.log(`Number of pages: ${numberOfPages}`);
@@ -57,15 +81,14 @@ const ViewPyq = ({ route }) => {
         }}
         style={styles.pdf}
       />
-     <TouchableOpacity  
-          onPress={handleDownload}>
-     <Download/>
-     </TouchableOpacity >
-  
-     
+      <TouchableOpacity
+        onPress={requestStoragePermission}>
+        <Download />
+      </TouchableOpacity>
+
       {loadingProgress > 0 && (
         <View style={styles.progressContainer}>
-          <Text>Loading: {loadingProgress.toFixed(2)}%</Text>
+          <Text style={{ color: 'black', fontSize: responsiveFontSize(2), fontWeight: '500' }}>Loading: {loadingProgress.toFixed(2)}%</Text>
         </View>
       )}
     </View>
